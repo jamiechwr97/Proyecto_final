@@ -1,0 +1,56 @@
+.footer {
+  background-color: #1B163E;
+  padding-bottom: 10px;
+}
+
+.navbar {
+  background-color: #1B163E;
+  font-size: 18px;
+}
+
+.navbar li {
+  background-color: #1B163E;
+}
+
+.navbar a {
+  background-color: #1B163E;
+  transition: ease 0.3s;
+}
+
+.navbar a:hover {
+  transform: translateY(-3px);
+  transition: ease 0.3s;
+}
+
+.bi {
+  font-size: 26px;
+  margin-right: 6px;
+  color: white;
+  transition: ease 0.3s;
+  background-color: #1B163E;
+}
+
+.social-media a {
+  background-color: #1B163E;
+}
+
+.social-media, .titulo, .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1B163E;
+}
+
+.titulo img, .titulo a {
+  background-color: #1B163E;
+}
+
+.copyright h5 {
+  background-color: #1B163E;
+}
+
+.social-media a:hover {
+  transform: translateY(-3px);
+  transition: ease 0.3s;
+  background-color: #1B163E;
+}

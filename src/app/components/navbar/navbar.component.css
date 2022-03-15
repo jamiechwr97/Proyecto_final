@@ -1,0 +1,52 @@
+.navbar {
+  -webkit-transition: all 0.6s ease-out;
+  -moz-transition: all 0.6s ease-out;
+  -o-transition: all 0.6s ease-out;
+  -ms-transition: all 0.6s ease-out;
+  transition: all 0.6s ease-out;
+  background-color: #001220;
+  font-size: 18px;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.btn-signIn {
+  border-radius: 20px;
+  background-color: #8B7AF4;
+  color: white;
+  transition: all 0.3s ease-out;
+}
+
+.btn-signIn:hover {
+  background-color: #483B99;
+  transition: all 0.3s ease-out;
+}
+
+.dropdown-menu.columns-2 {
+	min-width: 330px;
+}
+
+.dropdown-menu.columns-2 li {
+	background: transparent;
+}
+
+.dropdown-menu.columns-2 a:hover {
+	background-color: #8B7AF4;
+  color: white;
+}
+
+.row {
+  background: transparent;
+}
+
+.col-sm-6 {
+  background: transparent;
+}
+
+button {
+  font-weight: 500;
+}
+
+
