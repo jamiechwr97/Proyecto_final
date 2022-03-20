@@ -6,7 +6,7 @@
   </div>
 
   <div class="arrow text-center">
-    <a href="#categories"><i class="bi bi-caret-down"></i></a>
+    <a fragment="categories" (click)="navigateToSection('categories')"><i class="bi bi-arrow-down-short"></i></a>
   </div>
 
   <div id="categories">
@@ -15,35 +15,35 @@
     <div class="category-group mt-5">
       <div class="categories-listed">
         <div class="row row-cols-md-2 row-cols-lg-3 g-5 p-5 pt-0">
-          <div class="card list">
+          <a href="#"><div class="card list">
             <h2 class="category-name text-center">Pop</h2>
             <img class="card-img" src="../../../../assets/photos/pop.jpeg" alt="Card image">
-          </div>
+          </div></a>
 
-          <div class="card list">
+          <a href="#"><div class="card list">
             <h2 class="category-name text-center" id="latina">Latina</h2>
             <img class="card-img" src="../../../../assets/photos/latina.jpeg" alt="Card image">
-          </div>
+          </div></a>
 
-          <div class="card list">
+          <a href="#"><div class="card list">
             <h2 class="category-name text-center" id="rock">Rock</h2>
             <img class="card-img" src="../../../../assets/photos/rock.jpeg" alt="Card image">
-          </div>
+          </div></a>
 
-          <div class="card list">
-            <h2 class="category-name text-center" id="electro">Electrónica</h2>
+          <a href="#"><div class="card list">
+            <h2 class="category-name text-center" id="electro">EDM</h2>
             <img class="card-img" src="../../../../assets/photos/electro.jpeg" alt="Card image">
-          </div>
+          </div></a>
 
-          <div class="card list">
+          <a href="#"><div class="card list">
             <h2 class="category-name text-center" id="rap">Hip-Hop</h2>
             <img class="card-img" src="../../../../assets/photos/rap.jpeg" alt="Card image">
-          </div>
+          </div></a>
 
-          <div class="card list">
+          <a href="#"><div class="card list">
             <h2 class="category-name text-center" id="country">Country</h2>
             <img class="card-img" src="../../../../assets/photos/country.jpeg" alt="Card image">
-          </div>
+          </div></a>
         </div>
         <div class="row mas-contenido1">
           <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
@@ -52,3 +52,139 @@
     </div>
   </div>
 
+  <div id="top_ventas">
+    <h1 class="ms-5 text-white cat-title">Top Ventas</h1>
+    <div class="scrolling-wrapper">
+      <a href="#"><app-concierto-card class="horizontal-card" *ngFor="let concert of conciertos" [concierto]="concert"></app-concierto-card></a>
+      <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
+    </div>
+  </div>
+
+  <div id="proximos_eventos">
+    <h1 class="ms-5 text-white cat-title">Próximos Eventos</h1>
+    <div class="scrolling-wrapper">
+      <a href="#"><app-concierto-card class="horizontal-card" *ngFor="let co of conciertosOrdenados" [concierto]="co"></app-concierto-card></a>
+      <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
+    </div>
+  </div>
+
+  <div id="artistas">
+    <h1 class="ms-5 text-white cat-title">Artistas de moda</h1>
+    <div class="circulo1"></div>
+    <div class="category-group mt-5">
+      <div class="categories-listed">
+        <div class="row row-cols-md-2 row-cols-xl-3 g-5 p-5 pt-0">
+          <div class="card list2">
+            <div class="fondo_artistas">
+              <div class="row">
+                <div class="col-6 artista_img">
+                  <img src="../../../../assets/photos/artistas/badbunny.jpeg" >
+                </div>
+                <div class="col-6">
+                  <div class="row artista_nombre">
+                    <h2 class="text-center">Bad Bunny</h2>
+                  </div>
+                  <div class="row mas-contenido2">
+                    <button class="btn">Ver artista</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card list2">
+            <div class="fondo_artistas">
+              <div class="row">
+                <div class="col-6 artista_img">
+                  <img src="../../../../assets/photos/artistas/acdc.jpeg" >
+                </div>
+                <div class="col-6">
+                  <div class="row artista_nombre">
+                    <h2 class="text-center">AC / DC</h2>
+                  </div>
+                  <div class="row mas-contenido2">
+                    <button class="btn">Ver artista</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card list2">
+            <div class="fondo_artistas">
+              <div class="row">
+                <div class="col-6 artista_img">
+                  <img src="../../../../assets/photos/artistas/balvin.jpeg" >
+                </div>
+                <div class="col-6">
+                  <div class="row artista_nombre">
+                    <h2 class="text-center">J Balvin</h2>
+                  </div>
+                  <div class="row mas-contenido2">
+                    <button class="btn">Ver artista</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card list2">
+            <div class="fondo_artistas">
+              <div class="row">
+                <div class="col-6 artista_img">
+                  <img src="../../../../assets/photos/artistas/rels.jpeg">
+                </div>
+                <div class="col-6">
+                  <div class="row artista_nombre">
+                    <h2 class="text-center">Rels B</h2>
+                  </div>
+                  <div class="row mas-contenido2">
+                    <button class="btn">Ver artista</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card list2">
+            <div class="fondo_artistas">
+              <div class="row">
+                <div class="col-6 artista_img">
+                  <img src="../../../../assets/photos/artistas/weeknd.jpeg" >
+                </div>
+                <div class="col-6">
+                  <div class="row artista_nombre">
+                    <h2 class="text-center">The Weeknd</h2>
+                  </div>
+                  <div class="row mas-contenido2">
+                    <button class="btn">Ver artista</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card list2">
+            <div class="fondo_artistas">
+              <div class="row">
+                <div class="col-6 artista_img">
+                  <img src="../../../../assets/photos/artistas/sheeran.jpeg" >
+                </div>
+                <div class="col-6">
+                  <div class="row artista_nombre">
+                    <h2 class="text-center">Edd Sheeran</h2>
+                  </div>
+                  <div class="row mas-contenido2">
+                    <button class="btn">Ver artista</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mas-contenido1">
+          <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
+        </div>
+      </div>
+    </div>
+  </div>

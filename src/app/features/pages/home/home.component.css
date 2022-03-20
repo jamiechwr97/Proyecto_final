@@ -2,6 +2,11 @@
   background-color: #001220;
 }
 
+a {
+  background: none;
+  text-decoration: none;
+}
+
 .entrance {
   height: 80vh;
   width: 100%;
@@ -36,7 +41,7 @@
   }
   60% {
     opacity: .7;
-    transform: translateX(15px);
+    transform: translateX(105px) rotate(15deg);
   }
   100% {
     opacity: 1;
@@ -45,7 +50,7 @@
 }
 
 .arrow {
-  font-size: 40px;
+  font-size: 50px;
   color: white;
 }
 
@@ -54,7 +59,11 @@
   color: white;
 }
 
-#categories {
+.arrow a:hover {
+  cursor: pointer;
+}
+
+#categories, #top_ventas, #proximos_eventos, #artistas {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #001220;
@@ -72,8 +81,21 @@
   position: absolute;
   z-index: 1;
   top: 1150px;
-  left: 65%;
+  left: 5%;
   transform: rotate(45deg);
+  background: rgb(198,35,104);
+  background: linear-gradient(90deg, rgba(198,35,104,1) 40%, rgba(128,119,255,0.9836309523809523) 100%, rgba(139,122,244,1) 100%);
+}
+
+.oval2 {
+  height: 250px;
+  width: 400px;
+  background-color: #555;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 2%;
+  transform: rotate(-15deg);
   background: rgb(198,35,104);
   background: linear-gradient(90deg, rgba(198,35,104,1) 40%, rgba(128,119,255,0.9836309523809523) 100%, rgba(139,122,244,1) 100%);
 }
@@ -104,6 +126,12 @@
   transition: ease 0.3s;
 }
 
+.list2 {
+  background: none;
+  border: none;
+  transition: ease 0.3s;
+}
+
 .list:hover {
   transform: translateY(-8px);
   transition: ease 0.3s;
@@ -118,7 +146,7 @@
 }
 
 .list:hover img {
-  opacity: 0.9;
+  opacity: 0.6;
   filter: blur(6px);
 }
 
@@ -128,6 +156,8 @@
   z-index: 99;
   opacity: 0;
   font-weight: 800;
+  font-size: 40px;
+  text-shadow: 2px 2px 1px black;
 }
 
 .list:hover .category-name {
@@ -152,18 +182,33 @@
   }
 }
 
-.mas-contenido1 {
+.mas-contenido1, .mas-contenido2 {
   background: none;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.mas-contenido1 button {
+.mas-contenido1 button, .scrolling-wrapper button {
   width: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   background-color: #8B7AF4;
   color: white;
+  transition: ease-in-out 0.2s;
+}
+
+.mas-contenido2 button {
+  width: 100px;
+  margin: 40% 2% 0 0;
+  font-size: 14px;
+  background-color: #8B7AF4;
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+
+.mas-contenido2 button:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
   transition: ease-in-out 0.2s;
 }
 
@@ -172,8 +217,123 @@
   color: white
 }
 
-.mas-contenido1 button:hover {
+.mas-contenido1 button:hover, .scrolling-wrapper button:hover {
   transform:scale(1.1);
   background-color: #483B99;
   transition: ease-in-out 0.2s;
+}
+
+#proximos_eventos {
+  width: 100%;
+  background: url('../../../../assets/photos/bg-olas.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #001220;
+}
+
+.scrolling-wrapper {
+  background-color: #555;
+  padding: 10px;
+  padding-right: 30px;
+  overflow-y: hidden;
+  overflow-x: auto;
+  height: 500px;
+  white-space: nowrap;
+  width: auto;
+  margin: 3% 5% 0 5%;
+  background: rgba(60, 60, 60, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.7px);
+  -webkit-backdrop-filter: blur(9.7px);
+  z-index: 99;
+}
+
+.horizontal-card {
+  display: inline-block;
+  background: none;
+  z-index: 99;
+}
+
+.scrolling-wrapper button {
+  margin-bottom: 120px;
+  z-index: 99;
+}
+
+.circulo1 {
+  height: 400px;
+  width: 400px;
+  background-color: #555;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  left: 55%;
+  background: rgb(198,35,104);
+  background: linear-gradient(90deg, rgba(186,84,192,1) 40%, rgba(128,119,255,0.9836309523809523) 100%, rgba(244,63,6,1) 100%);
+}
+
+.fondo_artistas {
+  background: rgba(27, 27, 27, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.7px);
+  -webkit-backdrop-filter: blur(9.7px);
+  z-index: 9;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10%;
+  transition: ease-in-out 0.2s;
+}
+
+.fondo_artistas:hover {
+  background: rgba(70, 70, 70);
+  transition: ease-in-out 0.2s;
+}
+
+.fondo_artista:hover h2, img, .list2 button {
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+}
+
+.list2 .artista_img {
+  padding: 7%;
+  z-index: 11;
+}
+
+.list2 img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background: none;
+  box-shadow: 1px 4px 2px -2px black;
+  transition: ease-in-out 0.3s;
+  z-index: 11;
+}
+
+.list2 img:hover {
+  transform: scale(1.5);
+  transition: ease-in-out 0.3s;
+}
+
+.list2 .row, .list2 .col-6 {
+  background: none;
+  z-index: 11;
+}
+
+.list2 .artista_nombre {
+  padding: 10% 0 10% 0;
+  background: none;
+}
+
+.list2 .artista_nombre h2 {
+  background: none;
+  color: white;
+  position: absolute;
+  right: -60px;
+  text-shadow: 2px 2px 1px black;
+  transition: ease-in-out 0.2s;
+  z-index: 11;
 }

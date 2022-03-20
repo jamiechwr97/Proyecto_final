@@ -1,0 +1,8 @@
+<div class="card">
+  <img class="card-img-top" src={{concierto?.img}}>
+  <div class="card-body">
+    <p class="card-text"><i class="bi bi-calendar2 me-2"></i>{{ concierto?.fecha | date:"dd/MM/yyyy" }}</p>
+    <h5 class="card-title">{{ concierto?.nombre }}</h5>
+    <p class="card-text">{{ concierto?.lugar }}</p>
+  </div>
+</div>

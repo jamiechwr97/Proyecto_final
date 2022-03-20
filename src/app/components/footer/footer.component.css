@@ -1,6 +1,7 @@
 .footer {
   background-color: #1B163E;
   padding-bottom: 10px;
+  z-index: 100;
 }
 
 .navbar {
