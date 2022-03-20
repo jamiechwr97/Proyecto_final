@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,9 +15,10 @@ import { HomeModule } from './features/pages/home/home.module';
     FooterComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    HomeModule
+    BrowserModule,
+    HomeModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

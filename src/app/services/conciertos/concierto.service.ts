@@ -14,7 +14,8 @@ export class ConciertoService {
       hora: '20:45',
       lugar: 'Madrid - Wizink Center',
       artista: 'AC/DC',
-      img: '../../../assets/photos/conciertos/acdc.jpeg'
+      img: '../../../assets/photos/conciertos/acdc.jpeg',
+      categoria: 'rock'
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export class ConciertoService {
       hora: '20:00',
       lugar: 'Madrid - Wizink Center',
       artista: 'Dani Martin',
-      img: '../../../assets/photos/conciertos/dani.jpeg'
+      img: '../../../assets/photos/conciertos/dani.jpeg',
+      categoria: 'pop'
     },
     {
       id: 3,
@@ -32,7 +34,8 @@ export class ConciertoService {
       hora: '21:00',
       lugar: 'Alicante - Las Cigarreras',
       artista: 'Rayden',
-      img: '../../../assets/photos/conciertos/rayden.jpeg'
+      img: '../../../assets/photos/conciertos/rayden.jpeg',
+      categoria: 'hip-hop'
     },
     {
       id: 4,
@@ -41,7 +44,8 @@ export class ConciertoService {
       hora: '20:45',
       lugar: 'Barcelona - Estadio Olímpico',
       artista: 'Bruno Mars',
-      img: '../../../assets/photos/conciertos/bruno.jpeg'
+      img: '../../../assets/photos/conciertos/bruno.jpeg',
+      categoria: 'pop'
     },
     {
       id: 5,
@@ -50,7 +54,8 @@ export class ConciertoService {
       hora: '21:00',
       lugar: 'Madrid - Wizink Center',
       artista: 'Iron Maiden',
-      img: '../../../assets/photos/conciertos/maiden.jpeg'
+      img: '../../../assets/photos/conciertos/maiden.jpeg',
+      categoria: 'rock'
     },
     {
       id: 6,
@@ -59,7 +64,8 @@ export class ConciertoService {
       hora: '20:30',
       lugar: 'Barcelona - Palau Sant Jordi',
       artista: 'Malú',
-      img: '../../../assets/photos/conciertos/malu.jpeg'
+      img: '../../../assets/photos/conciertos/malu.jpeg',
+      categoria: 'pop'
     }
   ];
 
@@ -89,5 +95,11 @@ export class ConciertoService {
 
   elimEvento(i: number) {
     this.conciertos.splice(i, 1);
+  }
+
+  getAllFiltered(c: string) {
+    return this.conciertos.filter((x) => {
+      return x.categoria === c;
+    });
   }
 }

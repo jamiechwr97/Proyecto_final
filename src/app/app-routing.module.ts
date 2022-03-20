@@ -6,9 +6,8 @@ import { CategoriasComponent } from './features/pages/categorias/categorias.comp
 const routes: Routes = [
   { path: '', pathMatch:'full', redirectTo:'home' },
   { path: 'home', component: HomeComponent },
-  /*{ path: 'categorias', component: CategoriasComponent },
-  { path: 'categorias/:nombre' },
-  { path: 'concierto/:nombre' },
+  { path: 'categorias/:nombre', component: CategoriasComponent },
+  /*{ path: 'concierto/:nombre' },
   { path: 'artistas' },
   { path: 'artistas/:nombre' },
   { path: 'register' },*/

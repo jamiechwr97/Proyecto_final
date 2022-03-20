@@ -1,0 +1,36 @@
+.main-content-body {
+  width: 100%;
+  background-color: #001220;
+}
+
+.row .col-12 {
+  background: none;
+}
+
+.breadcrumb {
+  margin: 2% 0 2% 0;
+}
+
+.cat-title {
+  font-weight: 500;
+}
+
+.filter-box {
+  background-color: #3C3C3C;
+  margin: 0 2% 0 2%;
+}
+
+.filter-box h3 {
+  font-size: 14px;
+  color: white
+}
+
+.form-check {
+  color: white;
+  font-size: 12px;
+}
+
+.lugar .btn {
+  background-color: white;
+  font-size: 12px;
+}

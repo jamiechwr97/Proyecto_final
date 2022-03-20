@@ -14,39 +14,46 @@
     <div class="oval"></div>
     <div class="category-group mt-5">
       <div class="categories-listed">
-        <div class="row row-cols-md-2 row-cols-lg-3 g-5 p-5 pt-0">
-          <a href="#"><div class="card list">
+        <div class="row row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-5 p-5 pt-0">
+          <a [routerLink]="['/categorias', 'pop']"><div class="card list">
             <h2 class="category-name text-center">Pop</h2>
             <img class="card-img" src="../../../../assets/photos/pop.jpeg" alt="Card image">
           </div></a>
 
-          <a href="#"><div class="card list">
+          <a [routerLink]="['/categorias', 'latina']"><div class="card list">
             <h2 class="category-name text-center" id="latina">Latina</h2>
             <img class="card-img" src="../../../../assets/photos/latina.jpeg" alt="Card image">
           </div></a>
 
-          <a href="#"><div class="card list">
+          <a [routerLink]="['/categorias', 'rock']"><div class="card list">
             <h2 class="category-name text-center" id="rock">Rock</h2>
             <img class="card-img" src="../../../../assets/photos/rock.jpeg" alt="Card image">
           </div></a>
 
-          <a href="#"><div class="card list">
+          <a [routerLink]="['/categorias', 'edm']"><div class="card list">
             <h2 class="category-name text-center" id="electro">EDM</h2>
             <img class="card-img" src="../../../../assets/photos/electro.jpeg" alt="Card image">
           </div></a>
 
-          <a href="#"><div class="card list">
+          <a [routerLink]="['/categorias', 'hip-hop']"><div class="card list">
             <h2 class="category-name text-center" id="rap">Hip-Hop</h2>
             <img class="card-img" src="../../../../assets/photos/rap.jpeg" alt="Card image">
           </div></a>
 
-          <a href="#"><div class="card list">
+          <a [routerLink]="['/categorias', 'country']"><div class="card list">
             <h2 class="category-name text-center" id="country">Country</h2>
             <img class="card-img" src="../../../../assets/photos/country.jpeg" alt="Card image">
           </div></a>
-        </div>
-        <div class="row mas-contenido1">
-          <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
+
+          <a [routerLink]="['/categorias', 'jazz']"><div class="card list">
+            <h2 class="category-name text-center" id="jazz">Jazz</h2>
+            <img class="card-img" src="../../../../assets/photos/jazz.jpeg" alt="Card image">
+          </div></a>
+
+          <a [routerLink]="['/categorias', 'clasica']"><div class="card list">
+            <h2 class="category-name text-center" id="clasica">Clásica</h2>
+            <img class="card-img" src="../../../../assets/photos/clasica.jpeg" alt="Card image">
+          </div></a>
         </div>
       </div>
     </div>
@@ -172,7 +179,7 @@
                 </div>
                 <div class="col-6">
                   <div class="row artista_nombre">
-                    <h2 class="text-center">Edd Sheeran</h2>
+                    <h2 class="text-center">Ed Sheeran</h2>
                   </div>
                   <div class="row mas-contenido2">
                     <button class="btn">Ver artista</button>

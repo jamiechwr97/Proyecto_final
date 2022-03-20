@@ -13,16 +13,16 @@
           <ul class="dropdown-menu columns-2">
             <div class="row">
               <div class="col-sm-6 text-center">
-                <li><a class="dropdown-item" href="#">Country</a></li>
-                <li><a class="dropdown-item" href="#">Electrónica</a></li>
-                <li><a class="dropdown-item" href="#">Flamenco</a></li>
-                <li><a class="dropdown-item" href="#">Hip Hop</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'country']">Country</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'clasica']">Clásica</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'edm']">EDM</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'hip-hop']">Hip-Hop</a></li>
               </div>
               <div class="col-sm-6 text-center">
-                <li><a class="dropdown-item" href="#">Latina</a></li>
-                <li><a class="dropdown-item" href="#">Música clásica</a></li>
-                <li><a class="dropdown-item" href="#">Jazz</a></li>
-                <li><a class="dropdown-item" href="#">Pop</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'latina']">Latina</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'jazz']">Jazz</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'pop']">Pop</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/categorias', 'rock']">Rock</a></li>
               </div>
             </div>
           </ul>

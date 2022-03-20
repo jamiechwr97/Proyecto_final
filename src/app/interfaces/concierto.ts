@@ -5,5 +5,6 @@ export interface Concierto {
   hora: string,
   lugar: string,
   artista: string,
-  img: string
+  img: string,
+  categoria: string
 }
