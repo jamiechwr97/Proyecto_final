@@ -3,7 +3,7 @@
   background-color: #001220;
 }
 
-.row .col-12 {
+.row, .col-3, .col-12, label, .form-check, .dropdown, .d-flex, .col-8 {
   background: none;
 }
 
@@ -17,12 +17,14 @@
 
 .filter-box {
   background-color: #3C3C3C;
-  margin: 0 2% 0 2%;
+  margin: 0 0 0 6%;
+  border-radius: 16px;
 }
 
 .filter-box h3 {
   font-size: 14px;
-  color: white
+  color: white;
+  background: none;
 }
 
 .form-check {
@@ -30,7 +32,40 @@
   font-size: 12px;
 }
 
-.lugar .btn {
+.filter-box .btn {
   background-color: white;
   font-size: 12px;
+}
+
+.fecha .btn {
+  font-size: 13px;
+  margin: 0 2% 0 2%;
+}
+
+.search-filter {
+  margin: 0 2% 0 1%;
+  background-color: #3C3C3C;
+  height: 60px;
+  border-radius: 16px;
+}
+
+.search-filter p {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 19px 16px;
+  text-decoration: none;
+  font-size: 13px;
+  background: none;
+  color: white;
+}
+
+.search-filter input[type=text] {
+    width: 40%;
+    margin: 12px 20px 0 0;
+    float: right;
+    border-radius: 10px;
+    font-size: 14px;
+    height: 35px;
 }

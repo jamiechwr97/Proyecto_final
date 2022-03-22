@@ -1,0 +1,43 @@
+.concierto-body {
+  margin: 5px 2% 5px 1%;
+  border-radius: 20px;
+  padding: 10px 0 0 20px;
+  background-color: white;
+  transition: ease-in-out 0.3s;
+}
+
+.concierto-body:hover {
+  background-color: rgb(221, 221, 221);
+  transition: ease-in-out 0.3s;
+}
+
+.row, .col-6, h4, p, i {
+  background: none;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 12px;
+  color: 001220;
+  opacity: 0.7;
+}
+
+.btn {
+  float: right;
+  margin-right: 10px;
+  margin-top: 27px;
+  border-radius: 20px;
+  background-color: #8B7AF4;
+  font-size: 12px;
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+
+.btn:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
+  transition: ease-in-out 0.2s;
+}

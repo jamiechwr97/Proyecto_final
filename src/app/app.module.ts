@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeModule } from './features/pages/home/home.module';
+import { ConciertoItemModule } from './components/concierto-item/concierto-item.module';
+import { CategoriasModule } from './features/pages/categorias/categorias.module';
+import { SearchFilterPipe } from './pipes/search-filter/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,7 @@ import { HomeModule } from './features/pages/home/home.module';
     AppRoutingModule,
     BrowserModule,
     HomeModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

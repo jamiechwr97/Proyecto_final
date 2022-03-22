@@ -12,6 +12,8 @@ export class CategoriasComponent implements OnInit {
 
   categoria: string = ''; //nombre de la categoría que se muestra en la página
   conciertos: Concierto[] = [];
+  cantidadConciertos: number = 0;
+  filterSearch = '';
 
   constructor(private _activeRouter: ActivatedRoute, private conciertoService: ConciertoService) { }
 
@@ -21,6 +23,7 @@ export class CategoriasComponent implements OnInit {
     });
     this.conciertos = this.conciertoService.getAllFiltered(this.categoria);
     this.categoria = this.tranform(this.categoria);
+    this.cantidadConciertos = this.conciertos.length;
   }
 
   tranform(value: string): string {
