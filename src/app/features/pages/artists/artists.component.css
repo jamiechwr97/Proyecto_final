@@ -1,0 +1,248 @@
+* {
+  background: none;
+}
+
+.main-content-body {
+  width: 100%;
+  background-color: #001220;
+}
+
+.breadcrumb {
+  margin: 2% 0 2% 0;
+}
+
+.artistas-caja {
+  margin: 2% 10px 2% 10px;
+  padding: 5% 0 5% 0;
+}
+
+.cat-title {
+  font-weight: 500;
+}
+
+.btn {
+  font-size: 14px;
+  background-color: #8B7AF4;
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+
+.btn:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
+  transition: ease-in-out 0.2s;
+}
+
+.listado-artistas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listado-artistas .col-4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artista {
+  height: 180px;
+  width: 180px;
+  border-radius: 10px;
+  color: white;
+  transition: ease-in-out 0.3s;
+}
+
+.artista h5{
+  margin-top: 60%;
+}
+
+.tipo1:hover {
+  transform: rotate(-3deg) scale(1.1);
+  transition: ease-in-out 0.3s;
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+}
+
+.tipo2:hover {
+  transform: rotate(3deg) scale(1.1);
+  transition: ease-in-out 0.3s;
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+}
+
+#badbunny {
+  background: url('../../../../assets/photos/artistas/badbunny.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#jbalvin {
+  background: url('../../../../assets/photos/artistas/balvin.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#towers {
+  background: url('../../../../assets/photos/artistas/towers.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#pop, #hip-hop, #country, #clasica {
+  background-color: #1B163E;
+}
+
+#clasica {
+  margin-bottom: 0;
+}
+
+#sheeran {
+  background: url('../../../../assets/photos/artistas/sheeran.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#weeknd {
+  background: url('../../../../assets/photos/artistas/weeknd.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#lipa {
+  background: url('../../../../assets/photos/artistas/lipa.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#acdc {
+  background: url('../../../../assets/photos/artistas/acdc.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#maiden {
+  background: url('../../../../assets/photos/artistas/maiden.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#roses {
+  background: url('../../../../assets/photos/artistas/roses.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#eminem {
+  background: url('../../../../assets/photos/artistas/eminem.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#rels {
+  background: url('../../../../assets/photos/artistas/rels.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#morad {
+  background: url('../../../../assets/photos/artistas/morad.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#lotus {
+  background: url('../../../../assets/photos/artistas/lotus.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#marius {
+  background: url('../../../../assets/photos/artistas/marius.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#kamasi {
+  background: url('../../../../assets/photos/artistas/kamasi.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#swift {
+  background: url('../../../../assets/photos/country.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#wallen {
+  background: url('../../../../assets/photos/artistas/wallen.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#combs {
+  background: url('../../../../assets/photos/artistas/combs.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#aoki {
+  background: url('../../../../assets/photos/electro.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#diplo {
+  background: url('../../../../assets/photos/artistas/diplo.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#guetta {
+  background: url('../../../../assets/photos/artistas/guetta.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#dovgan {
+  background: url('../../../../assets/photos/artistas/dovgan.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#beethoven {
+  background: url('../../../../assets/photos/artistas/symphony.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#vivaldi {
+  background: url('../../../../assets/photos/artistas/vivaldi.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

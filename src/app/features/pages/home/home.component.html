@@ -63,7 +63,7 @@
     <h1 class="ms-5 text-white cat-title">Top Ventas</h1>
     <div class="scrolling-wrapper">
       <a href="#"><app-concierto-card class="horizontal-card" *ngFor="let concert of conciertos" [concierto]="concert"></app-concierto-card></a>
-      <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
+      <a (click)="navigateToSection('categories')"><button class="btn"><i class="bi bi-plus-circle"></i> Más</button></a>
     </div>
   </div>
 
@@ -71,7 +71,7 @@
     <h1 class="ms-5 text-white cat-title">Próximos Eventos</h1>
     <div class="scrolling-wrapper">
       <a href="#" [routerLink]="['/concierto', 'hip-hop']"><app-concierto-card class="horizontal-card" *ngFor="let co of conciertosOrdenados" [concierto]="co"></app-concierto-card></a>
-      <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
+      <a (click)="navigateToSection('categories')"><button class="btn"><i class="bi bi-plus-circle"></i> Más</button></a>
     </div>
   </div>
 
@@ -190,7 +190,7 @@
           </div>
         </div>
         <div class="row mas-contenido1">
-          <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
+          a<button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
         </div>
       </div>
     </div>
