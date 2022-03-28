@@ -1,5 +1,13 @@
+* {
+  background: none;
+}
+
 .main-content-body {
   width: 100%;
+  background: url('../../../../assets/photos/bg-olas.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   background-color: #001220;
 }
 
@@ -16,9 +24,11 @@
 }
 
 .filter-box {
-  background-color: #3C3C3C;
+  background: rgba(24, 24, 24, 0.4);
   margin: 0 0 0 6%;
   border-radius: 16px;
+  backdrop-filter: blur(9.7px);
+  -webkit-backdrop-filter: blur(9.7px);
 }
 
 .filter-box h3 {
@@ -44,7 +54,9 @@
 
 .search-filter {
   margin: 0 2% 0 1%;
-  background-color: #3C3C3C;
+  background: rgba(24, 24, 24, 0.4);
+  backdrop-filter: blur(9.7px);
+  -webkit-backdrop-filter: blur(9.7px);
   height: 60px;
   border-radius: 16px;
 }
@@ -61,11 +73,65 @@
   color: white;
 }
 
-.search-filter input[type=text] {
-    width: 40%;
-    margin: 12px 20px 0 0;
-    float: right;
-    border-radius: 10px;
-    font-size: 14px;
-    height: 35px;
+form{
+  position: relative;
+  top: 50%;
+  left: 97%;
+  transform: translate(-100%,-50%);
+  transition: all 1s;
+  width: 50px;
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+.search-filter input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 0.9em;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.bi-search{
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.1em;
+  transition: all 1s;
+}
+
+form:hover{
+  width: 40%;
+  cursor: pointer;
+}
+
+form:hover input{
+  display: block;
+}
+
+form:focus {
+  outline: none;
+}
+
+form:hover .bi-search{
+  background: #1B163E;
+  color: white;
 }

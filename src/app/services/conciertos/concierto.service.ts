@@ -89,10 +89,6 @@ export class ConciertoService {
     return this.conciertosOrden;
   }
 
-  addEvento(c: Concierto) {
-    this.conciertos.push(c);
-  }
-
   elimEvento(i: number) {
     this.conciertos.splice(i, 1);
   }
@@ -100,6 +96,12 @@ export class ConciertoService {
   getAllFiltered(c: string) {
     return this.conciertos.filter((x) => {
       return x.categoria === c;
+    });
+  }
+
+  getOneConcert(id: number) {
+    return this.conciertos.find(x => {
+      return x.id === id;
     });
   }
 }

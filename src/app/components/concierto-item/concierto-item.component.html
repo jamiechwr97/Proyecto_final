@@ -6,7 +6,7 @@
       <p>{{ concierto.lugar }}</p>
     </div>
     <div class="col-6">
-      <button class="btn">Comprar <i class="bi bi-cart"></i></button>
+      <a [routerLink]="['/concierto', ':'+concierto.id]"><button class="btn">Reservar <i class="bi bi-cart"></i></button></a>
     </div>
   </div>
 </div>

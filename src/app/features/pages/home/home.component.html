@@ -1,7 +1,7 @@
 
   <div class="entrance">
     <div class="titulo bouncy">
-      <img src="../../../../assets/photos/logo-white.svg" height="200" width="550" alt="">
+      <img src="../../../../assets/photos/logo-white.svg" height="200" width="550" alt="" loading="lazy">
     </div>
   </div>
 
@@ -17,42 +17,42 @@
         <div class="row row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-5 p-5 pt-0">
           <a [routerLink]="['/categorias', 'pop']"><div class="card list">
             <h2 class="category-name text-center">Pop</h2>
-            <img class="card-img" src="../../../../assets/photos/pop.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/pop.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'latina']"><div class="card list">
             <h2 class="category-name text-center" id="latina">Latina</h2>
-            <img class="card-img" src="../../../../assets/photos/latina.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/latina.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'rock']"><div class="card list">
             <h2 class="category-name text-center" id="rock">Rock</h2>
-            <img class="card-img" src="../../../../assets/photos/rock.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/rock.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'edm']"><div class="card list">
             <h2 class="category-name text-center" id="electro">EDM</h2>
-            <img class="card-img" src="../../../../assets/photos/electro.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/electro.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'hip-hop']"><div class="card list">
             <h2 class="category-name text-center" id="rap">Hip-Hop</h2>
-            <img class="card-img" src="../../../../assets/photos/rap.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/rap.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'country']"><div class="card list">
             <h2 class="category-name text-center" id="country">Country</h2>
-            <img class="card-img" src="../../../../assets/photos/country.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/country.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'jazz']"><div class="card list">
             <h2 class="category-name text-center" id="jazz">Jazz</h2>
-            <img class="card-img" src="../../../../assets/photos/jazz.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/jazz.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'clasica']"><div class="card list">
             <h2 class="category-name text-center" id="clasica">Clásica</h2>
-            <img class="card-img" src="../../../../assets/photos/clasica.jpeg" alt="Card image">
+            <img class="card-img" src="../../../../assets/photos/clasica.jpeg" alt="Card image" loading="lazy">
           </div></a>
         </div>
       </div>
@@ -70,7 +70,7 @@
   <div id="proximos_eventos">
     <h1 class="ms-5 text-white cat-title">Próximos Eventos</h1>
     <div class="scrolling-wrapper">
-      <a href="#"><app-concierto-card class="horizontal-card" *ngFor="let co of conciertosOrdenados" [concierto]="co"></app-concierto-card></a>
+      <a href="#" [routerLink]="['/concierto', 'hip-hop']"><app-concierto-card class="horizontal-card" *ngFor="let co of conciertosOrdenados" [concierto]="co"></app-concierto-card></a>
       <button class="btn"><i class="bi bi-plus-circle"></i> Más</button>
     </div>
   </div>
@@ -85,7 +85,7 @@
             <div class="fondo_artistas">
               <div class="row">
                 <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/badbunny.jpeg" >
+                  <img src="../../../../assets/photos/artistas/badbunny.jpeg" loading="lazy">
                 </div>
                 <div class="col-6">
                   <div class="row artista_nombre">
@@ -103,7 +103,7 @@
             <div class="fondo_artistas">
               <div class="row">
                 <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/acdc.jpeg" >
+                  <img src="../../../../assets/photos/artistas/acdc.jpeg" loading="lazy">
                 </div>
                 <div class="col-6">
                   <div class="row artista_nombre">
@@ -121,7 +121,7 @@
             <div class="fondo_artistas">
               <div class="row">
                 <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/balvin.jpeg" >
+                  <img src="../../../../assets/photos/artistas/balvin.jpeg" loading="lazy">
                 </div>
                 <div class="col-6">
                   <div class="row artista_nombre">
@@ -139,7 +139,7 @@
             <div class="fondo_artistas">
               <div class="row">
                 <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/rels.jpeg">
+                  <img src="../../../../assets/photos/artistas/rels.jpeg" loading="lazy">
                 </div>
                 <div class="col-6">
                   <div class="row artista_nombre">
@@ -157,7 +157,7 @@
             <div class="fondo_artistas">
               <div class="row">
                 <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/weeknd.jpeg" >
+                  <img src="../../../../assets/photos/artistas/weeknd.jpeg" loading="lazy">
                 </div>
                 <div class="col-6">
                   <div class="row artista_nombre">
@@ -175,7 +175,7 @@
             <div class="fondo_artistas">
               <div class="row">
                 <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/sheeran.jpeg" >
+                  <img src="../../../../assets/photos/artistas/sheeran.jpeg" loading="lazy">
                 </div>
                 <div class="col-6">
                   <div class="row artista_nombre">

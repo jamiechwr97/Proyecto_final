@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,21 +11,42 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
 
   route: string;
+  loginForm!: FormGroup;
 
   constructor(location: Location, private router: Router) {
     router.events.subscribe(val => {
       if (location.path() != "") {
         this.route = location.path();
-        console.log(this.route);
       } else {
         this.route = "Home";
       }
     });
 
+    this.loginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required,Validators.minLength(6)])
+    })
+
     this.refresh();
   }
 
+  get emailField(): any {
+    return this.loginForm.get('email');
+  }
+
+  get passwordField(): any {
+    return this.loginForm.get('password');
+  }
+
   ngOnInit(): void {
+  }
+
+  loginFormSubmit() {
+
+  }
+
+  closeLogin(): void {
+    this.loginForm.reset();
   }
 
   refresh() {

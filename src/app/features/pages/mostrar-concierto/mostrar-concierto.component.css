@@ -1,0 +1,135 @@
+* {
+  background: none;
+}
+
+.main-concert-body {
+  width: 100%;
+  height: 1100px;
+  background-color: #001220;
+}
+
+.breadcrumb {
+  margin: 2% 0 20px 0;
+}
+
+.card-background {
+  width: 96%;
+  height: 40%;
+  margin: 20px 2% 0 2%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  opacity: 0.6;
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  position: absolute;
+}
+
+.card-content {
+  width: 96%;
+  height: 190px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 0 2% 2% 2%;
+  background-color: white;
+  z-index: 0;
+  top: 400px;
+  position: absolute;
+}
+
+.card-content-inside {
+  position: absolute;
+  top: 200px;
+  left: 4%;
+  z-index: 10;
+  background: none;
+}
+
+h3, p, i, .row, .col-6, .lugar-contenido, h4 {
+  background: none;
+}
+
+.card-content-inside h3 {
+  font-weight: 800;
+  color: white;
+}
+
+.card-content-inside .lugar {
+  font-size: 14px;
+  color: white;
+  opacity: 0.7;
+}
+
+.card-content-inside .fecha {
+  font-size: 12px;
+  color: white;
+  opacity: 0.7;
+}
+
+.btn {
+  background-color: #8B7AF4;
+  color: white;
+  margin-left: 20px;
+}
+
+.btn:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
+  transition: ease-in-out 0.2s;
+}
+
+.lugarSeg, .fechaSeg {
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lugar-contenido h4, .fecha-contenido h4 {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.caja-foto {
+  height: 350px;
+  width: 250px;
+  position: absolute;
+  z-index: 99;
+  right: 5%;
+  top: 200px;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
+  box-shadow: 1px 4px 2px -2px black;
+}
+
+.caja-foto img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.artistas {
+  position: absolute;
+  background-color: white;
+  top: 600px;
+  width: 50%;
+  height: 200px;
+  margin: 0 2% 2% 2%;
+  border-radius: 20px;
+}
+
+.artistas h4 {
+  margin: 2% 0 0 4%;
+}
+
+.peque {
+  height: 300px;
+  position: absolute;
+  top: 820px;
+  width: 50%;
+  margin: 0 2% 2% 2%;
+  background: none;
+}

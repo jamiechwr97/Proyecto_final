@@ -10,18 +10,25 @@ import { HomeModule } from './features/pages/home/home.module';
 import { ConciertoItemModule } from './components/concierto-item/concierto-item.module';
 import { CategoriasModule } from './features/pages/categorias/categorias.module';
 import { SearchFilterPipe } from './pipes/search-filter/search-filter.pipe';
+import { MostrarConciertoComponent } from './features/pages/mostrar-concierto/mostrar-concierto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LazyImgDirective } from './directives/lazy-img.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    MostrarConciertoComponent,
+    LazyImgDirective,
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     HomeModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,7 +14,7 @@
   </div>
 
   <div class="row mt-3">
-    <div class="col-4 col-md-3 filters mb-5">
+    <div class="col-4 col-md-3 col-lg-2 filters mb-5">
       <div class="filter-box">
         <div class="row">
           <div class="col-12 mb-3 fecha">
@@ -58,10 +58,13 @@
         </div>
       </div>
     </div>
-    <div class="col-8 col-md-9">
+    <div class="col-8 col-md-9 col-lg-10">
       <div class="search-filter">
         <p>{{ cantidadConciertos }} total eventos</p>
-        <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc" id="filterDesc" placeholder="Search...">
+        <form action="">
+          <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc" id="filterDesc" placeholder="Buscar ...">
+          <i class="bi bi-search"></i>
+        </form>
       </div>
 
       <div class="listado-conciertos">

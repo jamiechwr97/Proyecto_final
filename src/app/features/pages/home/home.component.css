@@ -142,7 +142,8 @@ a {
   width: 100%;
   border-radius: 20px;
   background: none;
-  box-shadow: 1px 4px 2px -2px black;
+  -webkit-box-shadow: 0px 0px 18px 7px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 18px 7px rgba(0,0,0,0.6);
 }
 
 .list:hover img {
@@ -276,7 +277,8 @@ a {
 .fondo_artistas {
   background: rgba(27, 27, 27, 0.4);
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.31);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.31);
   backdrop-filter: blur(9.7px);
   -webkit-backdrop-filter: blur(9.7px);
   z-index: 9;
@@ -308,7 +310,8 @@ a {
   width: 100%;
   border-radius: 50%;
   background: none;
-  box-shadow: 1px 4px 2px -2px black;
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.5);
   transition: ease-in-out 0.3s;
   z-index: 11;
 }

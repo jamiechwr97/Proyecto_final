@@ -11,7 +11,7 @@
   transition: ease-in-out 0.3s;
 }
 
-.row, .col-6, h4, p, i {
+.row, .col-6, h4, p, i, a {
   background: none;
 }
 

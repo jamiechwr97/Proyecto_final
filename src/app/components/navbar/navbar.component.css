@@ -49,4 +49,32 @@ button {
   font-weight: 500;
 }
 
+.modal, .modal-title, p, label, input, form, .form-floating, .modal-bottom, a, .invalid-feedback {
+  background: none;
+  border-radius: 20px;
+}
 
+.modal-dialog, .modal-content, .modal-header, .modal-body {
+  background: white;
+}
+
+.modal-body button {
+  background-color: #483B99;
+  transition: all 0.3s ease-out;
+  border-radius: 20px;
+  color: white
+}
+
+.modal-body button:hover {
+  background-color: #483B99;
+  transition: all 0.3s ease-out;
+}
+
+.modal-dialog, .modal-content {
+  border-radius: 20px !important;
+}
+
+.modal-header {
+  border-top-left-radius: 20px !important;
+  border-top-right-radius: 20px !important;
+}

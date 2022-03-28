@@ -1,0 +1,64 @@
+<div class="main-concert-body">
+  <div class="row">
+    <div class="col-12">
+      <ul class="ms-3 breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/home">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="#" [routerLink]="['/categorias', concierto?.categoria]">Categorías</a></li>
+        <li class="breadcrumb-item"><a href="#" [routerLink]="['/categorias', concierto?.categoria]">{{ categoria }}</a></li>
+        <li class="breadcrumb-item active">{{ concierto?.nombre }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card-background" [style.background-image]="'url(' + concierto?.img + ')'">
+      </div>
+      <div class="card-content-inside">
+        <h3>{{ concierto?.nombre }}</h3>
+        <p class="lugar">{{ concierto?.lugar }}</p>
+        <p class="fecha">{{ fecha }}</p>
+        <button class="btn">Reserva ya</button>
+      </div>
+      <div class="caja-foto">
+        <img src="{{concierto?.img}}">
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="card-content">
+        <div class="row">
+          <div class="col-6">
+            <div class="row">
+              <div class="col-12 col-md-6 mt-3 mt-md-5 lugarSeg">
+                <div class="col-6 lugar-contenido">
+                  <i class="bi bi-building"></i>
+                  <h4>{{ concierto?.lugar }}</h4>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 mt-2 mt-md-5 fechaSeg">
+                <div class="col-6 fecha-contenido">
+                  <i class="bi bi-calendar-week"></i>
+                  <h4>{{ fecha }}</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="col-6">
+        <div class="artistas">
+          <h4>Artistas presentes</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="peque" id="map">
+
+  </div>
+</div>
