@@ -1,0 +1,96 @@
+* {
+  background: none;
+}
+
+.main-list {
+  padding: 0 10% 0 10%;
+  background: #001220;
+}
+
+.title-box {
+  background: #001220;
+  height: 110px;
+}
+
+.title-box h2 {
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.category {
+  border-bottom: 8px solid #8B7AF4;
+  height: 110px;
+}
+
+.filter {
+  border-bottom: 8px solid #3C3C3C;
+  height: 110px;
+}
+
+.search-filter {
+  margin: 0 2% 0 1%;
+  height: 60px;
+}
+
+form{
+  position: relative;
+  left: 97%;
+  top: 100%;
+  transform: translate(-100%,-60%);
+  transition: all 1s;
+  width: 50px;
+  height: 50px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 25px;
+  border: 4px solid white;
+  padding: 5px;
+}
+
+.search-filter input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 42.5px;
+  line-height: 30px;
+  outline: 0;
+  border: 0;
+  display: none;
+  font-size: 0.9em;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+.bi-search{
+  box-sizing: border-box;
+  padding: 10px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: #07051a;
+  text-align: center;
+  font-size: 1.1em;
+  transition: all 1s;
+}
+
+form:hover{
+  width: 60%;
+  cursor: pointer;
+}
+
+form:hover input{
+  display: block;
+}
+
+form:focus {
+  outline: none;
+}
+
+form:hover .bi-search{
+  background: #1B163E;
+  color: white;
+}

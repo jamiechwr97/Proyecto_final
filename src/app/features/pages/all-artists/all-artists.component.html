@@ -1,0 +1,44 @@
+<div class="main-list">
+  <div class="row">
+    <div class="col-12 title-box">
+      <div class="row">
+        <div class="col-6 category">
+          <h2 class="text-white">Artistas {{ categoria }}</h2>
+        </div>
+
+        <div class="col-6 filter">
+          <div class="search-filter">
+            <form action="">
+              <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc" id="filterDesc" placeholder="Buscar ...">
+              <i class="bi bi-search"></i>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-6">
+          <h4 class="text-white text-center mt-3">Artista</h4>
+        </div>
+
+        <div class="col-3">
+          <h4 class="text-white text-center mt-3">Conciertos</h4>
+        </div>
+
+        <div class="col-3">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 lista-artistas">
+      <app-artist-item *ngFor="let a of artistas | filterArtists:filterSearch; let i = index" [artista]="a" [index] = "i" ></app-artist-item>
+    </div>
+  </div>
+</div>

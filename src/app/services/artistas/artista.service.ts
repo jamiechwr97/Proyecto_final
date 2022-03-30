@@ -61,6 +61,42 @@ export class ArtistaService {
       img: '../../../assets/photos/artistas/sheeran.jpeg',
       categoria: 'pop'
     },
+    {
+      id: 7,
+      nombre: 'Mike Towers',
+      fechaNacimiento: new Date('01/15/1994'),
+      lugarNacimiento: 'Río Piedras',
+      pais: 'Puerto Rico',
+      img: '../../../assets/photos/artistas/towers.jpeg',
+      categoria: 'latina'
+    },
+    {
+      id: 8,
+      nombre: 'Dua Lipa',
+      fechaNacimiento: new Date('08/22/1995'),
+      lugarNacimiento: 'Londres',
+      pais: 'Inglaterra',
+      img: '../../../assets/photos/artistas/lipa.jpeg',
+      categoria: 'pop'
+    },
+    {
+      id: 9,
+      nombre: 'Eminem',
+      fechaNacimiento: new Date('10/17/1972'),
+      lugarNacimiento: 'Missouri',
+      pais: 'EEUU',
+      img: '../../../assets/photos/artistas/eminem.jpeg',
+      categoria: 'hip-hop'
+    },
+    {
+      id: 10,
+      nombre: 'Morad',
+      fechaNacimiento: new Date('03/05/1999'),
+      lugarNacimiento: 'Hospitalet',
+      pais: 'España',
+      img: '../../../assets/photos/artistas/morad.jpeg',
+      categoria: 'hip-hop'
+    },
   ]
   constructor() { }
 
@@ -70,6 +106,12 @@ export class ArtistaService {
 
   getAll() {
     return this.artistas;
+  }
+
+  getAllCategory(c: string) {
+    return this.artistas.filter((x) => {
+      return x.categoria === c;
+    });
   }
 
   getOneConcert(id: number) {

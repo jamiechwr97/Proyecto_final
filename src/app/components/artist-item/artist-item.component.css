@@ -1,0 +1,68 @@
+* {
+  background: none;
+}
+
+.item-body {
+  height: 100px;
+}
+
+.artista-info {
+  height: 100%;
+}
+
+.item-bodyImpar {
+  background-color: #001220;
+}
+
+.item-bodyPar {
+  background-color: #011627;
+}
+
+.artista-name, .artista-conciertos, .artista-ver {
+  display: flex;
+  align-items: center;
+}
+
+.artista-conciertos, .artista-ver {
+  justify-content: center;
+}
+
+.artista-name, .artista-conciertos {
+  padding-top: 20px;
+}
+
+.artista-name a {
+  text-decoration: none;
+}
+
+.artista-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artista-img img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  transition: ease-in-out 0.5s;
+}
+
+.artista-img img:hover {
+  transform: scale(1.5);
+  transition: ease-in-out 0.3s;
+}
+
+.btn {
+  border-radius: 20px;
+  background-color: #8B7AF4;
+  font-size: 12px;
+  color: white;
+  transition: ease-in-out 0.2s;
+}
+
+.btn:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
+  transition: ease-in-out 0.2s;
+}

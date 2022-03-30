@@ -16,7 +16,7 @@
 }
 
 .card:hover .card-body {
-  background: rgba(70, 70, 70);
+  background: rgba(70, 70, 70, 0.5);
   transition: ease-in-out 0.2s;
   -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
   box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);

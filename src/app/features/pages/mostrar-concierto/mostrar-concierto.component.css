@@ -13,58 +13,41 @@
 }
 
 .card-background {
-  width: 96%;
-  height: 40%;
-  margin: 20px 2% 0 2%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  opacity: 0.6;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-  position: absolute;
+  height: 400px;
+  background: rgb(198,35,104);
+  background: linear-gradient(90deg, rgba(198,35,104,1) 16%,
+  rgba(128,119,255,0.9836309523809523) 100%, rgba(139,122,244,1) 100%);
 }
 
-.card-content {
-  width: 96%;
-  height: 190px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  margin: 0 2% 2% 2%;
-  background-color: white;
-  z-index: 0;
-  top: 400px;
-  position: absolute;
-}
-
-.card-content-inside {
-  position: absolute;
-  top: 200px;
-  left: 4%;
-  z-index: 10;
+h3, p, i, .row, .col-6, .col-5, .col-7, .col-12, h4 {
   background: none;
 }
 
-h3, p, i, .row, .col-6, .lugar-contenido, h4 {
-  background: none;
+.content-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.card-content-inside h3 {
+.card-content-inside h1 {
+  margin-top: 60px;
+  margin-left: 30px;
   font-weight: 800;
+  font-size: 50px;
   color: white;
 }
 
 .card-content-inside .lugar {
-  font-size: 14px;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 30px;
   color: white;
   opacity: 0.7;
 }
 
 .card-content-inside .fecha {
-  font-size: 12px;
+  font-size: 18px;
+  margin-left: 30px;
   color: white;
   opacity: 0.7;
 }
@@ -72,7 +55,7 @@ h3, p, i, .row, .col-6, .lugar-contenido, h4 {
 .btn {
   background-color: #8B7AF4;
   color: white;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .btn:hover {
@@ -81,44 +64,38 @@ h3, p, i, .row, .col-6, .lugar-contenido, h4 {
   transition: ease-in-out 0.2s;
 }
 
-.lugarSeg, .fechaSeg {
-  background: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.lugar-contenido h4, .fecha-contenido h4 {
-  display: inline-block;
-  font-size: 16px;
-}
-
 .caja-foto {
-  height: 350px;
-  width: 250px;
-  position: absolute;
-  z-index: 99;
-  right: 5%;
-  top: 200px;
-  border-radius: 20px;
+  height: 200px;
+  width: 200px;
+  margin-top: 80px;
+  border-radius: 5px;
+  transition: ease-in-out 0.5s;
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+}
+
+.caja-foto:hover {
   transition: ease-in-out 0.3s;
-  box-shadow: 1px 4px 2px -2px black;
+  cursor: pointer;
 }
 
 .caja-foto img {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
 }
 
 .artistas {
   position: absolute;
   background-color: white;
-  top: 600px;
-  width: 50%;
+  top: 580px;
+  width: 96%;
   height: 200px;
   margin: 0 2% 2% 2%;
   border-radius: 20px;
+  transition: ease-in-out 0.3s;
 }
 
 .artistas h4 {
@@ -132,4 +109,27 @@ h3, p, i, .row, .col-6, .lugar-contenido, h4 {
   width: 50%;
   margin: 0 2% 2% 2%;
   background: none;
+}
+
+@media screen and (min-width: 700px) {
+  .caja-foto {
+    height: 300px;
+    width: 300px;
+    margin-top: 50px;
+  }
+
+  .card-content-inside .lugar {
+    margin-top: 50px;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .artistas {
+    width: 50%;
+    transition: ease-in-out 0.3s;
+  }
 }

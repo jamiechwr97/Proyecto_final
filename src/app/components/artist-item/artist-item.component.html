@@ -1,0 +1,26 @@
+<div class="item-body" [ngClass]="{'item-bodyPar': index%2==0, 'item-bodyImpar': index%2==1}">
+  <div class="row artista-info">
+    <div class="col-12">
+      <div class="row artista-info">
+        <div class="col-6">
+          <div class="row artista-info">
+            <div class="col-4 artista-img">
+              <img src="{{ artista.img }}">
+            </div>
+
+            <div class="col-8 artista-name">
+              <a href="#"><p>{{ artista.nombre }}</p></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 artista-conciertos">
+          <p class="text-white">x conciertos</p>
+        </div>
+        <div class="col-3 artista-ver">
+          <a href="#"><button class="btn">Ver artista</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -15,13 +15,12 @@ a {
   background-position: center;
   background-size: cover;
   background-color: #001220;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .titulo {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%);
   background: none;
 }
 
@@ -71,6 +70,7 @@ a {
 
 .cat-title {
   font-weight: 500;
+  text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
 }
 
 .oval {
@@ -157,7 +157,7 @@ a {
   z-index: 99;
   opacity: 0;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 54px;
   text-shadow: 2px 2px 1px black;
 }
 
@@ -339,4 +339,40 @@ a {
   text-shadow: 2px 2px 1px black;
   transition: ease-in-out 0.2s;
   z-index: 11;
+}
+
+@media screen and (min-width: 575px) {
+  .category-name {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .category-name {
+    font-size: 36px;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .category-name {
+    font-size: 38px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .category-name {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .category-name {
+    font-size: 46px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .category-name {
+    font-size: 36px;
+  }
 }
