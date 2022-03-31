@@ -5,6 +5,7 @@ import { CategoriasComponent } from './features/pages/categorias/categorias.comp
 import { MostrarConciertoComponent } from './features/pages/mostrar-concierto/mostrar-concierto.component';
 import { ArtistsComponent } from './features/pages/artists/artists.component';
 import { AllArtistsComponent } from './features/pages/all-artists/all-artists.component';
+import { MostrarArtistaComponent } from './features/pages/mostrar-artista/mostrar-artista.component';
 
 const routes: Routes = [
   { path: '', pathMatch:'full', redirectTo:'home' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'concierto/:nombre', component: MostrarConciertoComponent },
   { path: 'artistas', component: ArtistsComponent },
   { path: 'artistas/:nombre', component: AllArtistsComponent },
+  { path: 'artista/:nombre', component: MostrarArtistaComponent },
   //{ path: 'register' },
   { path: '**', component: HomeComponent }
 ];

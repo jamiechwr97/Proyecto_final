@@ -1,0 +1,118 @@
+* {
+  background: none;
+}
+
+.main-body-artist {
+  width: 100%;
+  height: 1100px;
+  background-color: #001220;
+}
+
+.breadcrumb {
+  margin: 2% 0 20px 0;
+}
+
+.card-background {
+  height: auto;
+}
+
+.card-background-color1 {
+  background: rgb(198,35,104);
+  background: linear-gradient(90deg, rgba(198,35,104,1) 16%,
+  rgba(128,119,255,0.9836309523809523) 100%, rgba(139,122,244,1) 100%);
+}
+
+.card-background-color2 {
+  background: rgb(27,22,62);
+  background: linear-gradient(90deg, rgba(27,22,62,1) 29%,
+  rgba(139,122,244,1) 84%, rgba(198,35,104,1) 100%);
+}
+
+.card-background-color3 {
+  background: rgb(244,63,6);
+  background: linear-gradient(90deg, rgba(244,63,6,1) 13%,
+  rgba(139,122,244,1) 56%, rgba(186,84,192,1) 88%);
+}
+
+h3, p, i, .row, .col-6, .col-5, .col-7, .col-12, h4 {
+  background: none;
+}
+
+.content-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-content-inside h1 {
+  margin-top: 60px;
+  margin-left: 30px;
+  font-weight: 800;
+  font-size: 50px;
+  color: white;
+}
+
+.card-content-inside .lugar, .card-content-inside .conciertos {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 30px;
+  color: white;
+  opacity: 0.7;
+}
+
+.card-content-inside .fecha {
+  font-size: 18px;
+  margin-left: 30px;
+  color: white;
+  opacity: 0.7;
+}
+
+.card-content-inside .conciertos {
+  margin-bottom: 50px;
+}
+
+.caja-foto {
+  height: 200px;
+  width: 200px;
+  margin-top: 30px;
+  border-radius: 50%;
+  transition: ease-in-out 0.3s;
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+}
+
+.caja-foto:hover {
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.caja-foto img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: ease-in-out 0.3s;
+  -webkit-box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+  box-shadow: 0px 0px 12px 7px rgba(0,0,0,0.37);
+}
+
+@media screen and (min-width: 700px) {
+  .card-background {
+
+  }
+
+  .caja-foto {
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .caja-foto img {
+    border-radius: 5px;
+  }
+
+  .card-content-inside .lugar {
+    margin-top: 50px;
+  }
+}

@@ -9,7 +9,7 @@
             </div>
 
             <div class="col-8 artista-name">
-              <a href="#"><p>{{ artista.nombre }}</p></a>
+              <p>{{ artista.nombre }}</p>
             </div>
           </div>
         </div>
@@ -17,7 +17,7 @@
           <p class="text-white">x conciertos</p>
         </div>
         <div class="col-3 artista-ver">
-          <a href="#"><button class="btn">Ver artista</button></a>
+          <a href="#" [routerLink]="['/artista', artista.nombre]"><button class="btn">Ver artista</button></a>
         </div>
       </div>
     </div>

@@ -114,9 +114,9 @@ export class ArtistaService {
     });
   }
 
-  getOneConcert(id: number) {
+  getOneArtist(nombre: string) {
     return this.artistas.find(x => {
-      return x.id === id;
+      return x.nombre === nombre;
     });
   }
 }

@@ -1,0 +1,39 @@
+<div class="main-body-artist">
+  <div class="row">
+    <div class="col-12">
+      <ul class="ms-3 breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="/home">Inicio</a></li>
+        <li class="breadcrumb-item"><a href="#" routerLink="/artistas">Artistas</a></li>
+        <li class="breadcrumb-item"><a href="#" [routerLink]="['/artistas', artista?.categoria]" >{{ artista?.categoria }}</a></li>
+        <li class="breadcrumb-item active">{{ artista?.nombre }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="card-background" [ngClass]="
+      {
+        'card-background-color1':(artista?.categoria == 'pop' || artista?.categoria == 'country' || artista?.categoria == 'clasica'),
+        'card-background-color2':(artista?.categoria == 'hip-hop' || artista?.categoria == 'jazz' || artista?.categoria == 'edm'),
+        'card-background-color3':(artista?.categoria == 'latina' || artista?.categoria == 'rock')
+      }">
+        <div class="row">
+          <div class="col-7">
+            <div class="card-content-inside">
+              <h1>{{ artista?.nombre }}</h1>
+              <p class="lugar">{{ artista?.lugarNacimiento }}, {{ artista?.pais }}</p>
+              <p class="fecha">{{ fecha }}</p>
+              <p class="conciertos">Este artista tiene X conciertos próximamente.</p>
+            </div>
+          </div>
+          <div class="col-5 content-img">
+            <div class="caja-foto">
+              <img src="{{artista?.img}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

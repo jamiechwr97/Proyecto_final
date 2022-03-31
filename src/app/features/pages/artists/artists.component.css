@@ -46,12 +46,21 @@
   align-items: center;
 }
 
+.listado-artistas a {
+  text-decoration: none;
+  background: none;
+}
+
 .artista {
   height: 170px;
   width: 170px;
   border-radius: 10px;
   color: white;
   transition: ease-in-out 0.3s;
+}
+
+.artista:hover {
+  cursor: pointer;
 }
 
 .artista h5{

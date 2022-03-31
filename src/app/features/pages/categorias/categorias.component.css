@@ -24,6 +24,7 @@
 }
 
 .filter-box {
+  width: 100%;
   background: rgba(24, 24, 24, 0.4);
   margin: 0 0 0 6%;
   border-radius: 16px;
@@ -58,7 +59,7 @@
   backdrop-filter: blur(9.7px);
   -webkit-backdrop-filter: blur(9.7px);
   height: 60px;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 .search-filter p {
@@ -73,65 +74,44 @@
   color: white;
 }
 
-form{
-  position: relative;
-  top: 50%;
-  left: 97%;
-  transform: translate(-100%,-50%);
-  transition: all 1s;
-  width: 50px;
-  height: 50px;
-  background: white;
-  box-sizing: border-box;
-  border-radius: 25px;
-  border: 4px solid white;
-  padding: 5px;
-}
-
 .search-filter input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 42.5px;
-  line-height: 30px;
-  outline: 0;
-  border: 0;
-  display: none;
-  font-size: 0.9em;
-  border-radius: 20px;
-  padding: 0 20px;
+  float: right;
+  width: 35%;
+  margin-top: 7px;
+  margin-right: 5%;
+  padding: 12px 24px;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 18px;
+  color: white;
+  padding: 12px 0;
+  outline: none;
+  border: 1px solid transparent;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  backface-visibility: hidden;
+  transition: transform 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  transform-style: preserve-3d;
 }
 
-.bi-search{
-  box-sizing: border-box;
-  padding: 10px;
-  width: 42.5px;
-  height: 42.5px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 50%;
-  color: #07051a;
-  text-align: center;
-  font-size: 1.1em;
-  transition: all 1s;
-}
-
-form:hover{
-  width: 40%;
-  cursor: pointer;
-}
-
-form:hover input{
-  display: block;
-}
-
-form:focus {
+.search-filter input:focus {
+  color: black;
+  background-color: white;
+  border: 1px solid white;
+  transition: all 250ms ease-in-out;
+  border-radius: 7px;
   outline: none;
 }
 
-form:hover .bi-search{
-  background: #1B163E;
+.search-filter input::placeholder {
   color: white;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  padding-left: 10px;
+}
+
+.search-filter input:focus::placeholder {
+  color: #3c3c3c;
 }

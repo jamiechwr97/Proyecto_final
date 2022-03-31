@@ -15,6 +15,7 @@ import { MostrarConciertoComponent } from './features/pages/mostrar-concierto/mo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LazyImgDirective } from './directives/lazy-img.directive';
 import { ArtistsComponent } from './features/pages/artists/artists.component';
+import { MostrarArtistaComponent } from './features/pages/mostrar-artista/mostrar-artista.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ArtistsComponent } from './features/pages/artists/artists.component';
     FooterComponent,
     MostrarConciertoComponent,
     ArtistsComponent,
+    MostrarArtistaComponent,
     LazyImgDirective,
   ],
   imports: [
