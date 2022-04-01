@@ -1,18 +1,21 @@
 
   <div class="entrance">
-    <div class="titulo bouncy">
-      <img src="../../../../assets/photos/logo-white.svg" height="200" width="550" alt="" loading="lazy">
+    <div class="shadow-box">
+      <div class="row">
+          <div class="col-12 title-box">
+            <h2>Encuentra el concierto perfecto para tu mood del momento</h2>
+          </div>
+          <div class="col-12 button-box">
+            <a fragment="categories" (click)="navigateToSection('categories')"><button class="btn conciertos-btn">Ver conciertos aquí <i class="bi bi-arrow-right"></i></button></a>
+            <button class="btn artistas-btn" routerLink="/artistas">Ver artistas aquí <i class="bi bi-arrow-right"></i></button>
+          </div>
+      </div>
     </div>
   </div>
 
-  <div class="arrow text-center">
-    <a fragment="categories" (click)="navigateToSection('categories')"><i class="bi bi-arrow-down-short"></i></a>
-  </div>
-
   <div id="categories">
-    <h1 class="ms-5 text-white cat-title">Categorías</h1>
-    <div class="oval"></div>
-    <div class="category-group mt-5">
+    <h3 class="ms-5 cat-title">Categorías</h3>
+    <div class="category-group mt-3">
       <div class="categories-listed">
         <div class="row row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-5 p-5 pt-0">
           <a [routerLink]="['/categorias', 'pop']"><div class="card list">
@@ -37,12 +40,12 @@
 
           <a [routerLink]="['/categorias', 'hip-hop']"><div class="card list">
             <h2 class="category-name text-center" id="rap">Hip-Hop</h2>
-            <img class="card-img" src="../../../../assets/photos/rap.jpeg" alt="Card image" loading="lazy">
+            <img class="card-img" src="../../../../assets/photos/artistas/eminem.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'country']"><div class="card list">
             <h2 class="category-name text-center" id="country">Country</h2>
-            <img class="card-img" src="../../../../assets/photos/country.jpeg" alt="Card image" loading="lazy">
+            <img class="card-img" src="../../../../assets/photos/artistas/combs.jpeg" alt="Card image" loading="lazy">
           </div></a>
 
           <a [routerLink]="['/categorias', 'jazz']"><div class="card list">
@@ -59,139 +62,83 @@
     </div>
   </div>
 
-  <div id="top_ventas">
-    <h1 class="ms-5 text-white cat-title">Top Ventas</h1>
-    <div class="scrolling-wrapper">
-      <a href="#"><app-concierto-card class="horizontal-card" *ngFor="let concert of conciertos" [concierto]="concert"></app-concierto-card></a>
-      <a (click)="navigateToSection('categories')"><button class="btn"><i class="bi bi-plus-circle"></i> Más</button></a>
+
+  <div id="recuerdos">
+    <div class="shadow-box">
+      <div class="row">
+          <div class="col-12 title-box2">
+            <h2>Tienes la oportunidad de vivir tus sueños a pocos clicks</h2>
+          </div>
+          <div class="col-12 button-box2">
+            <button class="btn ciudades-btn">Ver ciudades aquí <i class="bi bi-arrow-right"></i></button>
+            <button class="btn contacto-btn" routerLink="/artistas">Contáctanos <i class="bi bi-arrow-right"></i></button>
+          </div>
+      </div>
     </div>
   </div>
 
-  <div id="proximos_eventos">
-    <h1 class="ms-5 text-white cat-title">Próximos Eventos</h1>
-    <div class="scrolling-wrapper">
-      <a href="#" [routerLink]="['/concierto', 'hip-hop']"><app-concierto-card class="horizontal-card" *ngFor="let co of conciertosOrdenados" [concierto]="co"></app-concierto-card></a>
-      <a (click)="navigateToSection('categories')"><button class="btn"><i class="bi bi-plus-circle"></i> Más</button></a>
-    </div>
-  </div>
 
   <div id="artistas">
-    <h1 class="ms-5 text-white cat-title">Artistas de moda</h1>
-    <div class="circulo1"></div>
-    <div class="category-group mt-5">
-      <div class="categories-listed">
-        <div class="row row-cols-md-2 row-cols-xl-3 g-5 p-5 pt-0">
-          <div class="card list2">
-            <div class="fondo_artistas">
-              <div class="row">
-                <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/badbunny.jpeg" loading="lazy">
-                </div>
-                <div class="col-6">
-                  <div class="row artista_nombre">
-                    <h2 class="text-center">Bad Bunny</h2>
-                  </div>
-                  <div class="row mas-contenido2">
-                    <button class="btn" [routerLink]="['/artista', 'Bad Bunny']">Ver artista</button>
-                  </div>
-                </div>
-              </div>
+    <div class="row">
+      <div class="col-12">
+        <h3 class="ms-5 text-white cat-title">Artistas más populares</h3>
+      </div>
+      <div class="col-12 artistas mt-5 mt-md-4">
+            <div class="artista mt-md-4 tipo-1" id="badbunny" [routerLink]="['/artista', 'Bad Bunny']">
+              <h5 class="ms-2">Bad Bunny</h5>
             </div>
-          </div>
 
-          <div class="card list2">
-            <div class="fondo_artistas">
-              <div class="row">
-                <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/acdc.jpeg" loading="lazy">
-                </div>
-                <div class="col-6">
-                  <div class="row artista_nombre">
-                    <h2 class="text-center">AC / DC</h2>
-                  </div>
-                  <div class="row mas-contenido2">
-                    <button class="btn" [routerLink]="['/artista', 'AC/DC']">Ver artista</button>
-                  </div>
-                </div>
-              </div>
+            <div class="artista mt-md-4 tipo-2" id="jbalvin" [routerLink]="['/artista', 'J Balvin']">
+              <h5 class="ms-2">J Balvin</h5>
             </div>
-          </div>
 
-          <div class="card list2">
-            <div class="fondo_artistas">
-              <div class="row">
-                <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/balvin.jpeg" loading="lazy">
-                </div>
-                <div class="col-6">
-                  <div class="row artista_nombre">
-                    <h2 class="text-center">J Balvin</h2>
-                  </div>
-                  <div class="row mas-contenido2">
-                    <button class="btn" [routerLink]="['/artista', 'J Balvin']">Ver artista</button>
-                  </div>
-                </div>
-              </div>
+            <div class="artista mt-md-4 tipo-1" id="weeknd" [routerLink]="['/artista', 'The Weeknd']">
+              <h5 class="ms-2">The Weeknd</h5>
             </div>
-          </div>
 
-          <div class="card list2">
-            <div class="fondo_artistas">
-              <div class="row">
-                <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/rels.jpeg" loading="lazy">
-                </div>
-                <div class="col-6">
-                  <div class="row artista_nombre">
-                    <h2 class="text-center">Rels B</h2>
-                  </div>
-                  <div class="row mas-contenido2">
-                    <button class="btn" [routerLink]="['/artista', 'Rels B']">Ver artista</button>
-                  </div>
-                </div>
-              </div>
+            <div class="artista mt-md-4 tipo-2" id="rels" [routerLink]="['/artista', 'Rels B']">
+              <h5 class="ms-2">Rels B</h5>
             </div>
-          </div>
 
-          <div class="card list2">
-            <div class="fondo_artistas">
-              <div class="row">
-                <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/weeknd.jpeg" loading="lazy">
-                </div>
-                <div class="col-6">
-                  <div class="row artista_nombre">
-                    <h2 class="text-center">The Weeknd</h2>
-                  </div>
-                  <div class="row mas-contenido2">
-                    <button class="btn" [routerLink]="['/artista', 'The Weeknd']">Ver artista</button>
-                  </div>
-                </div>
-              </div>
+            <div class="artista mt-md-4 tipo-1" id="lipa" [routerLink]="['/artista', 'Dua Lipa']">
+              <h5 class="ms-2">Dua Lipa</h5>
             </div>
-          </div>
 
-          <div class="card list2">
-            <div class="fondo_artistas">
-              <div class="row">
-                <div class="col-6 artista_img">
-                  <img src="../../../../assets/photos/artistas/sheeran.jpeg" loading="lazy">
-                </div>
-                <div class="col-6">
-                  <div class="row artista_nombre">
-                    <h2 class="text-center">Ed Sheeran</h2>
-                  </div>
-                  <div class="row mas-contenido2">
-                    <button class="btn" [routerLink]="['/artista', 'Ed Sheeran']">Ver artista</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+          <div class="artistas-button">
+            <button class="btn artistas-btn" routerLink="/artistas">Todos <i class="bi bi-arrow-right"></i></button>
           </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="top_ventas">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="col-12 title-box">
+          <h2 class="mb-3 text-white">¿Quieres ver lo más popular ahora mismo?</h2>
         </div>
-        <div class="row mas-contenido1">
-          <a href="#" class="text-center" [routerLink]="['/artistas']"><button class="btn"><i class="bi bi-plus-circle"></i> Más</button></a>
+
+        <div class="col-12 text-box">
+          <p>Puedes ver aquí los conciertos con más entradas vendidas hasta el momento, pero no te esperes demasiado que te quedas sin...</p>
         </div>
+
+        <div class="col-12 button-box">
+          <button class="btn artistas-btn">Ver conciertos aquí <i class="bi bi-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mt-5 mt-md-0">
+        <ngx-slick-carousel class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+        (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)"
+        (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+          <app-concierto-card ngxSlickItem *ngFor="let concert of conciertos; let i = index" [concierto]="concert" [index]="i"></app-concierto-card>
+        </ngx-slick-carousel>
       </div>
     </div>
   </div>

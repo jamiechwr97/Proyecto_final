@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { ConciertoCardModule } from 'src/app/components/concierto-card/concierto-card.module';
 import { RouterModule } from '@angular/router';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ConciertoCardModule,
-    RouterModule
+    RouterModule,
+    SlickCarouselModule
   ]
 })
 export class HomeModule { }

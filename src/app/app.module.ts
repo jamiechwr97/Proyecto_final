@@ -30,7 +30,6 @@ import { MostrarArtistaComponent } from './features/pages/mostrar-artista/mostra
   imports: [
     AppRoutingModule,
     BrowserModule,
-    HomeModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,

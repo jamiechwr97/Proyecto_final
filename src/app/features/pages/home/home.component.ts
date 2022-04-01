@@ -23,4 +23,19 @@ export class HomeComponent implements OnInit {
     window.location.hash = '';
     window.location.hash = section;
   }
+
+  slideConfig = { slidesToShow: 3, slidesToScroll: 1};
+
+  slickInit(e: any) {
+    console.log('slick initialized');
+  }
+  breakpoint(e: any) {
+    console.log('breakpoint');
+  }
+  afterChange(e: any) {
+    console.log('afterChange');
+  }
+  beforeChange(e: any) {
+    console.log('beforeChange');
+  }
 }
