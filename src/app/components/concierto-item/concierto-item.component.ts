@@ -9,10 +9,14 @@ import { Concierto } from 'src/app/interfaces/concierto';
 export class ConciertoItemComponent implements OnInit {
 
   @Input() concierto: Concierto;
+  @Input() index: number;
+  fecha: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.fecha = this.concierto.fecha.toDateString();
+    this.fecha = String(this.fecha);
   }
 
 }

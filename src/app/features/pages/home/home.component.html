@@ -13,7 +13,39 @@
     </div>
   </div>
 
-  <div id="categories">
+  <div id="top_ventas">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="col-12 title-box">
+          <h2 class="mb-3 text-black">¿Quieres ver lo más popular ahora mismo?</h2>
+        </div>
+
+        <div class="col-12 text-box">
+          <p>Puedes ver aquí los conciertos con más entradas vendidas hasta el momento, pero no te esperes demasiado que te quedas sin...</p>
+        </div>
+
+        <div class="col-12 button-box">
+          <button class="btn conciertos-btn">Ver conciertos aquí <i class="bi bi-arrow-right"></i></button>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 mt-5 mt-md-0 carousel-box">
+        <button class="prev-btn" (click)="prev()"><i class="bi bi-arrow-left"></i></button>
+        <ngx-slick-carousel class="carousel"
+        #slickModal="slick-carousel"
+        [config]="slideConfig"
+        (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)"
+        (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+          <app-concierto-card ngxSlickItem [routerLink]="['/concierto', ':'+concert.id]" *ngFor="let concert of conciertos; let i = index" [concierto]="concert" [index]="i"></app-concierto-card>
+        </ngx-slick-carousel>
+        <button class="next-btn" (click)="next()"><i class="bi bi-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!--<div id="categories">
     <h3 class="ms-5 cat-title">Categorías</h3>
     <div class="category-group mt-3">
       <div class="categories-listed">
@@ -60,7 +92,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 
 
   <div id="recuerdos">
@@ -108,37 +140,6 @@
           <div class="artistas-button">
             <button class="btn artistas-btn" routerLink="/artistas">Todos <i class="bi bi-arrow-right"></i></button>
           </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div id="top_ventas">
-    <div class="row">
-      <div class="col-12 col-md-6">
-        <div class="col-12 title-box">
-          <h2 class="mb-3 text-white">¿Quieres ver lo más popular ahora mismo?</h2>
-        </div>
-
-        <div class="col-12 text-box">
-          <p>Puedes ver aquí los conciertos con más entradas vendidas hasta el momento, pero no te esperes demasiado que te quedas sin...</p>
-        </div>
-
-        <div class="col-12 button-box">
-          <button class="btn artistas-btn">Ver conciertos aquí <i class="bi bi-arrow-right"></i></button>
-        </div>
-      </div>
-
-      <div class="col-12 col-md-6 mt-5 mt-md-0">
-        <ngx-slick-carousel class="carousel"
-        #slickModal="slick-carousel"
-        [config]="slideConfig"
-        (init)="slickInit($event)"
-        (breakpoint)="breakpoint($event)"
-        (afterChange)="afterChange($event)"
-        (beforeChange)="beforeChange($event)">
-          <app-concierto-card ngxSlickItem *ngFor="let concert of conciertos; let i = index" [concierto]="concert" [index]="i"></app-concierto-card>
-        </ngx-slick-carousel>
       </div>
     </div>
   </div>

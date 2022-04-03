@@ -1,21 +1,28 @@
 <div class="main-content-body">
 
   <div class="row">
-    <div class="col-12">
-      <ul class="ms-3 breadcrumb">
-        <li class="breadcrumb-item"><a href="#" routerLink="/home">Inicio</a></li>
-        <li class="breadcrumb-item active"><a>Categorías</a></li>
-        <li class="breadcrumb-item active">{{ categoria }}</li>
-      </ul>
+    <div class="col-12 search">
+          <ul class="ms-3 breadcrumb">
+            <li class="breadcrumb-item"><a href="#" routerLink="/home">Inicio</a></li>
+            <li class="breadcrumb-item active"><a>Categorías</a></li>
+            <li class="breadcrumb-item active">{{ categoria }}</li>
+          </ul>
+
+          <form action="">
+            <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc" id="filterDesc" placeholder="Buscar ...">
+          </form>
     </div>
     <div class="col-12">
-      <h1 class="ms-3 text-white cat-title">{{ categoria }}</h1>
+      <div class="search-filter">
+        <p>Todos los conciertos {{ categoria }}({{cantidadConciertos}})</p>
+        <p class="float-end ocultar" (click)="toggleDisplay()">Ocultar filtros <i class="bi bi-funnel"></i></p>
+      </div>
     </div>
   </div>
 
   <div class="row mt-3">
-    <div class="col-4 col-md-3 col-lg-2 filters mb-5 me-0">
-      <div class="filter-box">
+    <div class="col-4 col-md-3 col-lg-2 mb-5 me-0" id="filters">
+      <div id="filter-box">
         <div class="row">
           <div class="col-12 mb-3 fecha">
             <h3 class="ms-3 mt-3">Filtro por fecha</h3>
@@ -24,7 +31,7 @@
             </div>
           </div>
           <div class="col-12 mb-2 precio">
-            <h3 class="ms-3">Filtro por precio</h3>
+            <h3 class="ms-3 mt-3">Filtro por precio</h3>
             <div class="form-check ms-4 mt-3">
               <input type="radio" class="form-check-input" id="radio1" name="optradio" value="50" checked>0 - 50€
               <label class="form-check-label" for="radio1"></label>
@@ -39,7 +46,7 @@
             </div>
           </div>
           <div class="col-12 lugar mb-3">
-            <h3 class="ms-3">Filtro por lugar</h3>
+            <h3 class="ms-3 mt-3">Filtro por lugar</h3>
             <div class="d-flex justify-content-center mt-3">
               <div class="dropdown">
                 <button type="button" class="btn dropdown-toggle ms-2" data-bs-toggle="dropdown">
@@ -58,16 +65,9 @@
         </div>
       </div>
     </div>
-    <div class="col-8 col-md-9 col-lg-10">
-      <div class="search-filter">
-        <p>{{ cantidadConciertos }} total eventos</p>
-        <form action="">
-          <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc" id="filterDesc" placeholder="Buscar ...">
-        </form>
-      </div>
-
+    <div class="col-8 col-md-9 col-lg-10" id="lista">
       <div class="listado-conciertos">
-        <concierto-item *ngFor="let c of conciertos | searchFilter:filterSearch" [concierto]="c"></concierto-item>
+        <concierto-item *ngFor="let c of conciertos | searchFilter:filterSearch; let i = index" [concierto]="c" [index]="i"></concierto-item>
       </div>
     </div>
   </div>

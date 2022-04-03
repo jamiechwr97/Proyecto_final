@@ -11,11 +11,15 @@
 }
 
 .item-bodyImpar {
-  background-color: #001220;
+  background-color: rgb(243, 243, 243);
 }
 
 .item-bodyPar {
-  background-color: #011627;
+  background-color: white;
+}
+
+.artista-name a {
+  text-decoration: none;
 }
 
 .artista-name, .artista-conciertos, .artista-ver {
@@ -29,10 +33,6 @@
 
 .artista-name, .artista-conciertos {
   padding-top: 20px;
-}
-
-.artista-name p {
-  color: white;
 }
 
 .artista-img {

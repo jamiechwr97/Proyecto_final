@@ -1,3 +1,4 @@
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Concierto } from 'src/app/interfaces/concierto';
@@ -14,6 +15,7 @@ export class CategoriasComponent implements OnInit {
   conciertos: Concierto[] = [];
   cantidadConciertos: number = 0;
   filterSearch = '';
+  filterBox: any;
 
   constructor(private _activeRouter: ActivatedRoute, private conciertoService: ConciertoService) { }
 
@@ -29,5 +31,22 @@ export class CategoriasComponent implements OnInit {
   tranform(value: string): string {
     let first = value.substring(0,1).toUpperCase();
     return first + value.substring(1);
+  }
+
+  toggleDisplay() {
+    this.filterBox = document.getElementById('filters');
+    if(this.filterBox.style.display == "none") {
+      this.filterBox.style.display = "block";
+      document.getElementById('lista')!.classList.add('col-8');
+      document.getElementById('lista')!.classList.add('col-md-9');
+      document.getElementById('lista')!.classList.add('col-lg-10');
+      document.getElementById('lista')!.classList.remove('col-12');
+    } else {
+      this.filterBox.style.display = "none";
+      document.getElementById('lista')!.classList.remove('col-8');
+      document.getElementById('lista')!.classList.remove('col-md-9');
+      document.getElementById('lista')!.classList.remove('col-lg-10');
+      document.getElementById('lista')!.classList.add('col-12');
+    }
   }
 }

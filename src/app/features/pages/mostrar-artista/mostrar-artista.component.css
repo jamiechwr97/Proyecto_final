@@ -4,8 +4,8 @@
 
 .main-body-artist {
   width: 100%;
-  height: 1100px;
-  background-color: #001220;
+  height: auto;
+  background-color: white;
 }
 
 .breadcrumb {

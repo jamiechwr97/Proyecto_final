@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Concierto } from 'src/app/interfaces/concierto';
 import { ConciertoService } from 'src/app/services/conciertos/concierto.service';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +25,17 @@ export class HomeComponent implements OnInit {
     window.location.hash = section;
   }
 
-  slideConfig = { slidesToShow: 3, slidesToScroll: 1};
+  slideConfig = { slidesToShow: 3, slidesToScroll: 1, arrows: false};
+
+  @ViewChild('slickModal') slickModal: SlickCarouselComponent;
+
+next() {
+  this.slickModal.slickNext();
+}
+
+prev() {
+  this.slickModal.slickPrev();
+}
 
   slickInit(e: any) {
     console.log('slick initialized');

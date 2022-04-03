@@ -8,6 +8,9 @@
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 7px;
+  -webkit-box-shadow: inset 0px -89px 15px -6px rgba(0,0,0,0.9);
+-moz-box-shadow: inset 0px -89px 15px -6px rgba(0,0,0,0.9);
+box-shadow: inset 0px -89px 15px -6px rgba(0,0,0,0.9);
 }
 
 .concierto:hover {
@@ -21,8 +24,6 @@
   display: flex;
   align-items: flex-end;
   border-radius: 7px;
-  -webkit-box-shadow: inset 0px -42px 32px 9px rgba(0,0,0,0.76);
-  box-shadow: inset 0px -42px 32px 9px rgba(0,0,0,0.76);
 }
 
 .tipo-1:hover {
