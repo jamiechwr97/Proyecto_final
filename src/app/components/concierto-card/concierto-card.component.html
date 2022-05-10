@@ -1,11 +1,11 @@
-<div class="concierto tipo1 mt-md-4" [ngStyle]="{backgroundImage:'url('+concierto?.img}" [ngClass]="{'tipo-1': index%2==0, 'tipo-2': index%2==1}">
+<div class="concierto tipo1 mt-md-4" [ngStyle]="{backgroundImage:'url('+image}" [ngClass]="{'tipo-1': index%2==0, 'tipo-2': index%2==1}">
   <div class="content-box">
     <div class="row">
       <div class="col-12 title-box">
         <h4 class="ms-2">{{ concierto?.nombre }}</h4>
       </div>
       <div class="col-12 date-box">
-        <p class="ms-2">{{ fecha }}</p>
+        <p class="ms-2">{{ concierto?.fecha }}</p>
       </div>
     </div>
   </div>

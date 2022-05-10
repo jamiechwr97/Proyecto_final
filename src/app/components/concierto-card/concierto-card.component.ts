@@ -10,15 +10,17 @@ export class ConciertoCardComponent implements OnInit {
 
   //con el input recogemos los datos del evento pasado por el padre
   @Input() concierto?: Concierto;
-  fecha: any;
   @Input() index: number;
+  image: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.concierto);
-    this.fecha = this.concierto?.fecha.toDateString();
-    this.fecha = String(this.fecha);
+    if(this.concierto?.imagen == undefined || this.concierto?.imagen == null) {
+      this.image = '../../../assets/photos/error_image.jpg';
+    } else {
+      this.image = this.concierto?.imagen;
+    }
   }
 
 }

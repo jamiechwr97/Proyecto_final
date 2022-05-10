@@ -7,15 +7,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeModule } from './features/pages/home/home.module';
-import { ConciertoItemModule } from './components/concierto-item/concierto-item.module';
 import { CategoriasModule } from './features/pages/categorias/categorias.module';
 import { AllArtistsModule } from './features/pages/all-artists/all-artists.module';
-import { SearchFilterPipe } from './pipes/search-filter/search-filter.pipe';
 import { MostrarConciertoComponent } from './features/pages/mostrar-concierto/mostrar-concierto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LazyImgDirective } from './directives/lazy-img.directive';
 import { ArtistsComponent } from './features/pages/artists/artists.component';
 import { MostrarArtistaComponent } from './features/pages/mostrar-artista/mostrar-artista.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AdministracionComponent } from './features/pages/administracion/administracion.component';
+import { ConciertoElimItemModule } from './components/concierto-elim-item/concierto-elim-item.module';
+import { ArtistaElimItemModule } from './components/artista-elim-item/artista-elim-item.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { MostrarArtistaComponent } from './features/pages/mostrar-artista/mostra
     MostrarConciertoComponent,
     ArtistsComponent,
     MostrarArtistaComponent,
+    AdministracionComponent,
     LazyImgDirective,
   ],
   imports: [
@@ -33,6 +36,9 @@ import { MostrarArtistaComponent } from './features/pages/mostrar-artista/mostra
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    ConciertoElimItemModule,
+    ArtistaElimItemModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,11 +5,11 @@
         <div class="col-6">
           <div class="row artista-info">
             <div class="col-4 artista-img">
-              <img src="{{ artista.img }}">
+              <img src="{{ image }}">
             </div>
 
             <div class="col-8 artista-name">
-              <a href="#" [routerLink]="['/artista', artista.nombre]"><p>{{ artista.nombre }}</p></a>
+              <a href="#" [routerLink]="['/artista', ':'+artista.id_artista]"><p>{{ artista.nombre }}</p></a>
             </div>
           </div>
         </div>
@@ -17,7 +17,7 @@
           <p class="text-black">x conciertos</p>
         </div>
         <div class="col-3 artista-ver">
-          <a href="#" [routerLink]="['/artista', artista.nombre]"><button class="btn">Ver artista</button></a>
+          <a href="#" [routerLink]="['/artista', ':'+artista.id_artista]"><button class="btn">Ver artista</button></a>
         </div>
       </div>
     </div>

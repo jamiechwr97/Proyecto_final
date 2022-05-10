@@ -14,6 +14,7 @@ export class CategoriasComponent implements OnInit {
   categoria: string = ''; //nombre de la categoría que se muestra en la página
   conciertos: Concierto[] = [];
   cantidadConciertos: number = 0;
+  id: number = 0;
   filterSearch = '';
   filterBox: any;
 
@@ -23,9 +24,52 @@ export class CategoriasComponent implements OnInit {
     this._activeRouter.params.subscribe((params: Params) => {
       this.categoria = params['nombre'];
     });
-    this.conciertos = this.conciertoService.getAllFiltered(this.categoria);
+    this.id = this.getCategoryId(this.categoria)!;
+    this.getConcertsFiltered(this.id);
     this.categoria = this.tranform(this.categoria);
-    this.cantidadConciertos = this.conciertos.length;
+  }
+
+  public getConcertsFiltered(id: number) {
+    this.conciertoService.getAllFiltered(id).subscribe(
+      (conciertos: any) => {
+        this.conciertos = conciertos
+        this.cantidadConciertos = conciertos.length
+      },
+      error => console.error(error),
+      () => console.log('Conciertos cargados'),
+    );
+  }
+
+  public getCategoryId(cat: string) {
+    switch(cat){
+      case "country": {
+        return 1;
+      }
+      case "clasica": {
+        return 2;
+      }
+      case "edm": {
+        return 3;
+      }
+      case "hip-hop": {
+        return 4;
+      }
+      case "latina": {
+        return 5;
+      }
+      case "jazz": {
+        return 6;
+      }
+      case "pop": {
+        return 7;
+      }
+      case "rock": {
+        return 8;
+      }
+      default: {
+        return 0;
+      }
+    }
   }
 
   tranform(value: string): string {

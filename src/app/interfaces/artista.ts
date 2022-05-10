@@ -1,9 +1,9 @@
 export interface Artista {
-  id: number,
+  id_artista?: number,
   nombre: string,
-  fechaNacimiento: Date,
-  lugarNacimiento: string,
-  pais: string,
-  img: string,
+  fecha_nacimiento: Date,
+  pais_nacimiento: string,
+  lugar_nacimiento: string,
+  imagen?: string,
   categoria: string
 }

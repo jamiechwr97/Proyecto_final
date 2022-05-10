@@ -1,84 +1,35 @@
 import { Injectable } from '@angular/core';
 import { Concierto } from 'src/app/interfaces/concierto';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConciertoService {
 
-  conciertos: Concierto[] = [
-    {
-      id: 1,
-      nombre: 'Tributo AC/DC',
-      fecha: new Date('03/15/2022'),
-      hora: '20:45',
-      lugar: 'Madrid - Wizink Center',
-      artista: 'AC/DC',
-      img: '../../../assets/photos/conciertos/acdc.jpeg',
-      categoria: 'rock'
-    },
-    {
-      id: 2,
-      nombre: 'Dani Martin',
-      fecha: new Date('03/16/2022'),
-      hora: '20:00',
-      lugar: 'Madrid - Wizink Center',
-      artista: 'Dani Martin',
-      img: '../../../assets/photos/conciertos/dani.jpeg',
-      categoria: 'pop'
-    },
-    {
-      id: 3,
-      nombre: 'Rayden',
-      fecha: new Date('08/22/2022'),
-      hora: '21:00',
-      lugar: 'Alicante - Las Cigarreras',
-      artista: 'Rayden',
-      img: '../../../assets/photos/conciertos/rayden.jpeg',
-      categoria: 'hip-hop'
-    },
-    {
-      id: 4,
-      nombre: 'Bruno Mars',
-      fecha: new Date('06/02/2022'),
-      hora: '20:45',
-      lugar: 'Barcelona - Estadio Olímpico',
-      artista: 'Bruno Mars',
-      img: '../../../assets/photos/conciertos/bruno.jpeg',
-      categoria: 'pop'
-    },
-    {
-      id: 5,
-      nombre: 'Iron Maiden',
-      fecha: new Date('03/29/2022'),
-      hora: '21:00',
-      lugar: 'Madrid - Wizink Center',
-      artista: 'Iron Maiden',
-      img: '../../../assets/photos/conciertos/maiden.jpeg',
-      categoria: 'rock'
-    },
-    {
-      id: 6,
-      nombre: 'Malú',
-      fecha: new Date('03/10/2022'),
-      hora: '20:30',
-      lugar: 'Barcelona - Palau Sant Jordi',
-      artista: 'Malú',
-      img: '../../../assets/photos/conciertos/malu.jpeg',
-      categoria: 'pop'
-    }
-  ];
+  private url:string = "http://localhost:8080/api/";
+
+  conciertos: Concierto[] = [];
 
   conciertosOrden: Concierto[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  anadirConcierto(c: Concierto) {
-    this.conciertos.push(c);
+  getAll():Observable<any> {
+    return this.http.get(this.url+"?todosConciertos=1");
   }
 
-  getAll() {
-    return this.conciertos;
+  getTop5(): Observable<any> {
+    return this.http.get(this.url+"?top5=1");
+  }
+
+  getAllFiltered(id: any):Observable<any>  {
+    return this.http.get(this.url+"?conciertosFiltrados="+id);
+  }
+
+  getOneConcert(id: any):Observable<any>  {
+    return this.http.get(this.url+"?unicoConcierto="+id);
   }
 
   getAllOrdenados() {
@@ -89,19 +40,12 @@ export class ConciertoService {
     return this.conciertosOrden;
   }
 
-  elimEvento(i: number) {
-    this.conciertos.splice(i, 1);
+  anadirConcierto(c: Concierto):Observable<any> {
+    return this.http.post(this.url+"?addConcierto=1", c);
   }
 
-  getAllFiltered(c: string) {
-    return this.conciertos.filter((x) => {
-      return x.categoria === c;
-    });
-  }
-
-  getOneConcert(id: number) {
-    return this.conciertos.find(x => {
-      return x.id === id;
-    });
+  elimConcierto(i: any):Observable<any> {
+    console.log(i);
+    return this.http.delete(this.url+"?elimConcierto="+i);
   }
 }

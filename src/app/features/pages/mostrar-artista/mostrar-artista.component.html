@@ -22,14 +22,14 @@
           <div class="col-7">
             <div class="card-content-inside">
               <h1>{{ artista?.nombre }}</h1>
-              <p class="lugar">{{ artista?.lugarNacimiento }}, {{ artista?.pais }}</p>
-              <p class="fecha">{{ fecha }}</p>
+              <p class="lugar">{{ artista?.lugar_nacimiento }}, {{ artista?.pais_nacimiento }}</p>
+              <p class="fecha">{{ artista?.fecha_nacimiento }}</p>
               <p class="conciertos">Este artista tiene X conciertos próximamente.</p>
             </div>
           </div>
           <div class="col-5 content-img">
             <div class="caja-foto">
-              <img src="{{artista?.img}}">
+              <img src="{{image}}">
             </div>
           </div>
         </div>

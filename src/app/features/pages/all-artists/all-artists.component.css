@@ -2,8 +2,12 @@
   background: none;
 }
 
+.breadcrumb {
+  margin: 2% 0 20px 0;
+}
+
 .main-list {
-  padding: 0 10% 0 10%;
+  padding: 0 10% 5% 10%;
   background: white;
 }
 
@@ -13,7 +17,7 @@
 }
 
 .title-box h2 {
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: 20px;
 }
 

@@ -1,0 +1,203 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 side-menu">
+      <div class="menu-body d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+        <a class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="pt-3 fs-5 d-none d-sm-inline user-box">
+              <div class="row">
+                <div class="col-4">
+                  <img src="{{image}}" class="img-user">
+                </div>
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col-12 p-0">
+                      <p class="text-one"><span class="text-two">Hola 👋</span>
+                        <br>
+                        {{usuario.nombre}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mt-2 mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+            <li class="nav-item mb-1">
+                <a routerLink="/home" class="nav-link align-middle px-0">
+                    <i class="fs-4 bi-house outside-icon"></i> <span class="ms-2 d-none d-sm-inline">Home</span>
+                </a>
+            </li>
+            <li class="mb-1">
+                <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                    <i class="fs-4 bi-speedometer2 outside-icon"></i> <span class="ms-2 d-none d-sm-inline">Conciertos</span> </a>
+                <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                    <li class="w-100">
+                        <a class="nav-link px-0" (click)="toggleContent('anadirConc')"> <span class="ms-4 d-none d-sm-inline">Añadir</span> <i class="fs-5 bi-plus-circle inside-icon"></i> </a>
+                    </li>
+                    <li>
+                        <a class="nav-link px-0" (click)="toggleContent('editarConc')"> <span class="ms-4 d-none d-sm-inline">Editar</span> <i class="fs-5 bi-pencil inside-icon"></i> </a>
+                    </li>
+                    <li>
+                      <a class="nav-link px-0" (click)="toggleContent('eliminarConc')"> <span class="ms-4 d-none d-sm-inline">Eliminar</span> <i class="fs-5 bi-trash inside-icon"></i> </a>
+                  </li>
+                </ul>
+            </li>
+            <li class="mb-3">
+                <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                    <i class="fs-4 bi-mic outside-icon"></i> <span class="ms-2 d-none d-sm-inline">Artistas</span></a>
+                <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                  <li class="w-100">
+                    <a class="nav-link px-0" (click)="toggleContent('anadirArt')"> <span class="ms-4 d-none d-sm-inline">Añadir</span> <i class="fs-5 bi-plus-circle inside-icon"></i> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0"> <span class="ms-4 d-none d-sm-inline">Editar</span> <i class="fs-5 bi-pencil inside-icon"></i> </a>
+                  </li>
+                  <li>
+                    <a class="nav-link px-0" (click)="toggleContent('eliminarArt')"> <span class="ms-4 d-none d-sm-inline">Eliminar</span> <i class="fs-5 bi-trash inside-icon"></i> </a>
+                  </li>
+                </ul>
+            </li>
+          <hr>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col py-3" [ngSwitch]="administ">
+      <div *ngSwitchCase="'anadirConc'">
+        <h3 class="mt-3 text-center">Añadir concierto nuevo</h3>
+
+        <div class="mt-3 group-box">
+          <form [formGroup]="newConcForm" (ngSubmit)="newConcFormSubmit()" class="mt-2">
+            <div class="mb-3 form-floating long-box">
+              <input formControlName="nombre" [class.is-invalid]="nombreField.touched && nombreField.invalid"
+                type="text" class="form-control" id="id_nombre" placeholder="Nombre del evento" required>
+                <label for="id_nombre">Nombre</label>
+              <div *ngIf="nombreField.touched && nombreField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce el nombre del evento.</div>
+            </div>
+            <div class="mb-3 smaller-box">
+              <input formControlName="fecha" [class.is-invalid]="fechaField.touched && fechaField.invalid"
+                type="date" class="form-control" id="fecha" placeholder="" required>
+              <div *ngIf="fechaField.touched && fechaField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce la fecha del evento.</div>
+            </div>
+            <div class="mb-3 smaller-box">
+              <input formControlName="hora" [class.is-invalid]="horaField.touched && horaField.invalid"
+                type="time" class="form-control" id="hora" placeholder="" required>
+              <div *ngIf="horaField.touched && horaField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce la hora del evento.</div>
+            </div>
+
+            <div class="mb-3 long-box">
+              <input formControlName="imagen" type="file" class="form-control" id="imagen" placeholder="Seleccionar imagen del evento"
+              accept="image/png, image/jpeg, image/jpg, image/svg" (change)="onChange($event)">
+            </div>
+
+            <div class="mb-3 smaller-box">
+              <select formControlName="lugar" [class.is-invalid]="lugarField.touched && lugarField.invalid"
+                class="form-control" id="lugar" placeholder="Lugar del evento" [(ngModel)]="selected" required>
+                <option *ngFor="let l of lugares" [ngValue]="l.nombre_lugar">
+                  {{l.nombre_lugar}}
+                </option>
+              </select>
+              <div *ngIf="lugarField.touched && lugarField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce el lugar del evento.</div>
+            </div>
+
+            <div class="mb-3 smaller-box">
+              <select formControlName="categoria" [class.is-invalid]="categoriaField.touched && categoriaField.invalid"
+                class="form-control" id="categoria" placeholder="Categoria del evento" [(ngModel)]="selectedCat" required>
+                <option *ngFor="let c of categorias" [ngValue]="c.categoria">
+                  {{c.categoria}}
+                </option>
+              </select>
+              <div *ngIf="categoriaField.touched && categoriaField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce la categoria del evento.</div>
+            </div>
+
+            <button [disabled]="newConcForm.invalid" type="submit" class="mt-3 btn aceptar-button">Crear</button>
+          </form>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'editarConc'">
+        <h3 class="mt-3 text-center">Editar concierto</h3>
+        <div class="selector-box">
+          <select id="conciertoSelector" placeholder="Conciertos" [(ngModel)]="selectedCat">
+                <option *ngFor="let c of conciertos" [ngValue]="c.nombre">
+                  {{c.nombre}}
+                </option>
+              </select>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'eliminarConc'">
+        <h3 class="mt-3 text-center">Eliminar concierto</h3>
+        <form action="">
+          <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc" id="filterDesc" placeholder="Buscar ...">
+        </form>
+        <div class="listado-conciertos">
+          <concierto-elim-item *ngFor="let c of conciertos let i = index" [concierto]="c" [index]="i" (ConciertoBorrar)="eliminarConcierto($event)" (IndexBorrar)="eliminarDelArray($event)"></concierto-elim-item>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'anadirArt'">
+        <h3 class="mt-3 text-center">Añadir artista nuevo</h3>
+
+        <div class="mt-3 group-box">
+          <form [formGroup]="newArtForm" (ngSubmit)="newArtFormSubmit()" class="mt-2">
+            <div class="mb-3 form-floating long-box">
+              <input formControlName="nombre_art" [class.is-invalid]="nombreArtField.touched && nombreArtField.invalid"
+                type="text" class="form-control" id="nombre_art" placeholder="Nombre del evento" required>
+                <label for="nombre_art">Nombre</label>
+              <div *ngIf="nombreArtField.touched && nombreArtField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce el nombre del artista.</div>
+            </div>
+            <div class="mb-3 smaller-box">
+              <label for="fecha_nac" class="d-inline">Fecha nacimiento:</label>
+              <input formControlName="fecha_nac" [class.is-invalid]="fechaNacField.touched && fechaNacField.invalid"
+                type="date" class="form-control" id="fecha_nac" placeholder="" required>
+              <div *ngIf="fechaNacField.touched && fechaNacField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce la fecha de nacimiento del artista.</div>
+            </div>
+            <div class="mb-3 form-floating long-box">
+              <input formControlName="pais_nac" [class.is-invalid]="paisNacField.touched && paisNacField.invalid"
+                type="text" class="form-control" id="pais_nac" placeholder="País de nacimiento" required>
+                <label for="nombre_art">País de nacimiento</label>
+              <div *ngIf="paisNacField.touched && paisNacField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce el país de nacimiento del artista.</div>
+            </div>
+            <div class="mb-3 form-floating long-box">
+              <input formControlName="lugar_nac" [class.is-invalid]="lugarNacField.touched && lugarNacField.invalid"
+                type="text" class="form-control" id="lugar_nac" placeholder="Lugar de nacimiento" required>
+                <label for="nombre_art">Lugar de nacimiento</label>
+              <div *ngIf="lugarNacField.touched && lugarNacField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce el lugar de nacimiento del artista.</div>
+            </div>
+
+            <div class="mb-3 long-box">
+              <input formControlName="imgArt" type="file" class="form-control" id="imgArt" placeholder="Seleccionar imagen del artista"
+              accept="image/png, image/jpeg, image/jpg, image/svg" (change)="onChange($event)">
+            </div>
+
+            <div class="mb-3 smaller-box">
+              <label for="catArt" class="d-inline">Categoría:</label>
+              <select formControlName="catArt" [class.is-invalid]="catArtField.touched && catArtField.invalid"
+                class="form-control d-inline" id="catArt" placeholder="Categoria del artista" [(ngModel)]="selectedCatArt" required>
+                <option *ngFor="let catArt of categorias" [ngValue]="catArt.categoria">
+                  {{catArt.categoria}}
+                </option>
+              </select>
+              <div *ngIf="catArtField.touched && catArtField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce la categoria del artista.</div>
+            </div>
+
+            <button [disabled]="newArtForm.invalid" type="submit" class="mt-3 btn aceptar-button">Crear</button>
+          </form>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'eliminarArt'">
+        <h3 class="mt-3 text-center">Eliminar artista</h3>
+        <form action="">
+          <input type="text" [(ngModel)]="filterSearch" class="form-control" name="filterDesc" id="filterDesc" placeholder="Buscar ...">
+        </form>
+        <div class="listado-conciertos">
+          <artista-elim-item *ngFor="let a of artistas let i = index" [artista]="a" [index]="i" (ArtistaBorrar)="eliminarArtista($event)" (IndexBorrar)="eliminarDelArtArray($event)"></artista-elim-item>
+        </div>
+        <!--<ngb-pagination class="d-flex justify-content-center" [{page}]="page" [pageSize]="pageSize" [collectionSize]="artistas.length"></ngb-pagination>-->
+      </div>
+
+    </div>
+  </div>
+</div>

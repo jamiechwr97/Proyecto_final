@@ -1,10 +1,12 @@
+import { Time } from "@angular/common";
+
 export interface Concierto {
-  id: number,
+  id?: number,
   nombre: string,
-  fecha: Date,
+  fecha: string,
   hora: string,
+  imagen?: string,
+  entradas_vendidas: number,
   lugar: string,
-  artista: string,
-  img: string,
   categoria: string
 }

@@ -1,0 +1,107 @@
+.menu-body, ul, li, a, span, i, h3, label, p, .row, .col-12, div {
+  background: transparent;
+}
+
+.outside-icon {
+  color: white
+}
+
+.inside-icon {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.group-box, .long-box {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.smaller-box {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.aceptar-button {
+  font-size: 14px;
+  background-color: #8B7AF4;
+  color: white;
+  transition: ease-in-out 0.2s;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.aceptar-button:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
+  transition: ease-in-out 0.2s;
+}
+
+.side-menu {
+background: rgba(0, 0, 0, 0.88);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(9.2px);
+-webkit-backdrop-filter: blur(9.2px);
+border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.nav-link, a {
+  text-decoration: none;
+  color: rgb(180, 180, 180);
+}
+
+.nav-link span {
+  transition: ease-in-out 0.2s;
+}
+
+.nav-link span:hover {
+  cursor: pointer;
+  color: rgb(215, 180, 238);
+  transition: ease-in-out 0.2s;
+}
+
+.text-one {
+  font-size: 18px;
+  padding-top: 10px;
+}
+
+.text-two {
+  font-size: 14px;
+}
+
+.user-box {
+  display: inline-block;
+}
+
+.user-box h3{
+  font-size: 20px;
+  float: right;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+hr {
+  height: 2px;
+  width: 100%;
+  color: rgb(180, 180, 180);
+  background-color: rgb(180, 180, 180);
+  margin: 0 10% 0 0;
+}
+
+.img-user {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 50%;
+}
+
+ul {
+  width: 100%;
+  margin: 0 10% 0 0;
+}
+
+ul hr {
+  margin: 0;
+}

@@ -16,13 +16,21 @@ export class HomeComponent implements OnInit {
   constructor(private conciertoService: ConciertoService) { }
 
   ngOnInit(): void {
-    this.conciertos = this.conciertoService.getAll();
+    this.getCardConcerts();
     this.conciertosOrdenados = this.conciertoService.getAllOrdenados();
   }
 
   public navigateToSection(section: string) {
     window.location.hash = '';
     window.location.hash = section;
+  }
+
+  public getCardConcerts() {
+    this.conciertoService.getTop5().subscribe(
+      conciertos => this.conciertos = conciertos,
+      error => console.error(error),
+      () => console.log('Conciertos cargados')
+    );
   }
 
   slideConfig = { slidesToShow: 3, slidesToScroll: 1, arrows: false};

@@ -1,0 +1,12 @@
+<div class="concierto-body" [ngClass]="{'item-bodyPar': index%2==0, 'item-bodyImpar': index%2==1}">
+  <div class="row">
+    <div class="col-6">
+      <h4>{{ artista.nombre }}</h4>
+      <p class="mb-2">{{ artista.lugar_nacimiento }}</p>
+      <p class="mt-0">{{ artista.pais_nacimiento }}</p>
+    </div>
+    <div class="col-6">
+      <a (click)="elimArtista()"><button class="btn">Eliminar <i class="bi bi-trash"></i></button></a>
+    </div>
+  </div>
+</div>

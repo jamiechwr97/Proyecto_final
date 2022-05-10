@@ -15,8 +15,8 @@ export class MostrarConciertoComponent implements OnInit {
   route: string;
   id: number;
   categoria: any;
-  fecha: any;
   concierto?: Concierto;
+  image: string;
 
   constructor(location: Location, private router: Router, private conciertoService: ConciertoService) {
     router.events.subscribe(val => {
@@ -30,12 +30,10 @@ export class MostrarConciertoComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.route);
-    this.concierto = this.conciertoService.getOneConcert(this.id);
-    this.categoria = this.concierto?.categoria;
+    this.getOneConcert(this.id);
     this.categoria = String(this.categoria);
     this.categoria = this.transform(this.categoria);
-    this.fecha = this.concierto?.fecha.toDateString();
-    this.fecha = String(this.fecha);
+
     let loader = new Loader({
       apiKey: 'AIzaSyB-LydL_0QMOCUB7FOCDahArHLopjxAoho'
     })
@@ -46,6 +44,23 @@ export class MostrarConciertoComponent implements OnInit {
         zoom: 6
       })
     })
+  }
+
+  //esto se encarga de coger el concierto con el id que recibimos por el route y lo almacena en una variable de tipo concierto
+  public getOneConcert(id: any) {
+    this.conciertoService.getOneConcert(id).subscribe(
+      (concierto: any) => {
+        this.concierto = concierto[0]
+        this.categoria = concierto[0].categoria
+        if(concierto.imagen != undefined || concierto.imagen != null) {
+          this.image = concierto.imagen;
+        } else {
+          this.image = '../../../assets/photos/error_image.jpg';
+        }
+      },
+      error => console.error(error),
+      () => console.log('Concierto cargado'),
+    );
   }
 
   transform(value: string): string {

@@ -28,17 +28,48 @@
   transition: all 0.3s ease-out;
 }
 
+.user-image {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 0;
+}
+
+.bi-power {
+  background: transparent;
+  color: white;
+}
+
+.logout:hover {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  right: 0; left: auto;
+}
+
+.dropdown-menu.columns {
+  min-width: 200px;
+  background-color: #141414;
+}
+
 .dropdown-menu.columns-2 {
-	min-width: 330px;
+	min-width: 260px;
+  background-color: #141414;
 }
 
-.dropdown-menu.columns-2 li {
-	background: transparent;
+.dropdown-menu.columns-2 li, .dropdown-menu.columns li {
+	background-color: #141414;
 }
 
-.dropdown-menu.columns-2 a:hover {
+.dropdown-menu.columns-2 a, .dropdown-menu.columns a {
+  color: white;
+}
+
+.dropdown-menu.columns-2 a:hover, .dropdown-menu.columns a:hover{
 	background-color: #8B7AF4;
   color: white;
+  border-radius: 0;
 }
 
 .row {
@@ -55,7 +86,7 @@ button {
 
 .modal, .modal-title, p, label, input, form, .form-floating, .modal-bottom, a, .invalid-feedback {
   background: none;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .modal-dialog, .modal-content, .modal-header, .modal-body {
@@ -65,7 +96,7 @@ button {
 .modal-body button {
   background-color: #483B99;
   transition: all 0.3s ease-out;
-  border-radius: 20px;
+  border-radius: 10px;
   color: white
 }
 
@@ -75,10 +106,10 @@ button {
 }
 
 .modal-dialog, .modal-content {
-  border-radius: 20px !important;
+  border-radius: 10px !important;
 }
 
 .modal-header {
-  border-top-left-radius: 20px !important;
-  border-top-right-radius: 20px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
 }
