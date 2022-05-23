@@ -11,7 +11,7 @@ import { ConciertoElimItemModule } from 'src/app/components/concierto-elim-item/
   imports: [
     CommonModule,
     ConciertoItemModule,
-    ConciertoElimItemModule
+    ConciertoElimItemModule,
   ],
   providers: [
   ]

@@ -37,14 +37,14 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><img class="user-image" [src]="image"></a>
           <ul *ngIf="user.tipo_usuario == 0" class="dropdown-menu dropdown-menu-start columns">
               <div class="text-center">
-                <li><a class="dropdown-item" [routerLink]="['/categorias', 'country']">Mi perfil</a></li>
+                <li><a class="dropdown-item" routerLink="/perfil">Mi perfil</a></li>
                 <li><a class="dropdown-item" [routerLink]="['/categorias', 'clasica']">Mis conciertos</a></li>
                 <li><a class="dropdown-item logout" (click)="logout()">Logout<i class="bi bi-power d-inline ms-1"></i></a></li>
               </div>
           </ul>
           <ul *ngIf="user.tipo_usuario == 1" class="dropdown-menu dropdown-menu-start columns">
             <div class="text-center">
-              <li><a class="dropdown-item" [routerLink]="['/categorias', 'country']">Mi perfil</a></li>
+              <li><a class="dropdown-item" routerLink="/perfil">Mi perfil</a></li>
               <li><a class="dropdown-item" routerLink="/administracion">Administración</a></li>
               <li><a class="dropdown-item logout" (click)="logout()">Logout<i class="bi bi-power d-inline ms-1"></i></a></li>
             </div>
@@ -90,7 +90,7 @@
   <!-- Modal footer -->
           <div class="mb-3 modal-bottom">
             <hr>
-            <p class="ms-3 me-3 register-text">¿No tienes usuario?      <a href="" data-bs-toggle="modal" data-bs-target="#ModalRegistrar" id="registrar" data-bs-dismiss="modal">Regístrate</a></p>
+            <p class="ms-3 me-3 register-text">¿No tienes usuario?      <a href="" data-bs-toggle="modal" data-bs-target="#ModalRegistrar" id="registrar" data-bs-dismiss="modal" [routerLink]="['/registrar']">Regístrate</a></p>
           </div>
       </div>
   </div>

@@ -8,5 +8,6 @@ export interface Concierto {
   imagen?: string,
   entradas_vendidas: number,
   lugar: string,
-  categoria: string
+  categoria: string,
+  precio: number
 }

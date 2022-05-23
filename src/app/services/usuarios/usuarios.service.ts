@@ -52,4 +52,16 @@ export class UsuariosService {
   checkUserExist() {
     return this.user;
   }
+
+  checkEmailExists() {
+    return this.http.get(this.url+"?getEmails=1");
+  }
+
+  checkUsuario(): Observable<any> {
+    return this.http.get(this.url+"?getUsersForTest=1");
+  }
+
+  updateUser(user: any): Observable<any> {
+    return this.http.put(this.url+"?editUser=1", user);
+  }
 }

@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdministracionComponent } from './features/pages/administracion/administracion.component';
 import { ConciertoElimItemModule } from './components/concierto-elim-item/concierto-elim-item.module';
 import { ArtistaElimItemModule } from './components/artista-elim-item/artista-elim-item.module';
+import { RegistrarComponent } from './features/pages/registrar/registrar.component';
+import { PerfilComponent } from './features/pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ArtistaElimItemModule } from './components/artista-elim-item/artista-el
     ArtistsComponent,
     MostrarArtistaComponent,
     AdministracionComponent,
+    RegistrarComponent,
+    PerfilComponent,
     LazyImgDirective,
   ],
   imports: [
@@ -38,7 +42,7 @@ import { ArtistaElimItemModule } from './components/artista-elim-item/artista-el
     ReactiveFormsModule,
     HttpClientModule,
     ConciertoElimItemModule,
-    ArtistaElimItemModule
+    ArtistaElimItemModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

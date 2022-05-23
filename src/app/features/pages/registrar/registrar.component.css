@@ -1,0 +1,46 @@
+.menu-body, ul, li, a, span, i, h3, label, p, .row, .col-12, div {
+  background: transparent;
+}
+
+.group-box {
+  margin-bottom: 10%;
+}
+
+.group-box, .long-box {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.smaller-box {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.aceptar-button {
+  font-size: 14px;
+  background-color: #8B7AF4;
+  color: white;
+  transition: ease-in-out 0.2s;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.aceptar-button:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
+  transition: ease-in-out 0.2s;
+}
+
+.alert {
+  margin: 0 1% 1% 1%;
+}
+
+.close {
+  float: right;
+  border: 1px solid rgb(156, 0, 0);
+  border-radius: 7px;
+  color: rgb(156, 0, 0);
+}

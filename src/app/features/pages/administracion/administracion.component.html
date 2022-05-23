@@ -64,6 +64,12 @@
 
     <div class="col py-3" [ngSwitch]="administ">
       <div *ngSwitchCase="'anadirConc'">
+        <div *ngIf="alert" class="alert alert-success" role="alert">
+          Concierto creado correctamente.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closePopUp()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
         <h3 class="mt-3 text-center">Añadir concierto nuevo</h3>
 
         <div class="mt-3 group-box">
@@ -108,6 +114,23 @@
                 </option>
               </select>
               <div *ngIf="categoriaField.touched && categoriaField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce la categoria del evento.</div>
+            </div>
+
+            <div class="mb-3 form-floating smaller-box">
+              <input formControlName="precio" [class.is-invalid]="precioField.touched && precioField.invalid"
+                type="number" class="form-control" id="precio" placeholder="Precio del evento" required>
+                <label for="precio">Precio</label>
+              <div *ngIf="precioField.touched && precioField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce el precio del evento.</div>
+            </div>
+
+            <div class="mb-3 smaller-box">
+              <select formControlName="artista" [class.is-invalid]="artistaField.touched && artistaField.invalid"
+                class="form-control" id="artista" placeholder="Artista del evento" [(ngModel)]="selectedArt" required>
+                <option *ngFor="let a of artistas" [ngValue]="a.id_artista">
+                  {{a.nombre}}
+                </option>
+              </select>
+              <div *ngIf="artistaField.touched && artistaField.hasError('required')" class="d-block invalid-feedback">Porfavor introduce el artista del evento.</div>
             </div>
 
             <button [disabled]="newConcForm.invalid" type="submit" class="mt-3 btn aceptar-button">Crear</button>

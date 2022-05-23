@@ -1,10 +1,13 @@
 import { Location } from '@angular/common';
 import { transformAll } from '@angular/compiler/src/render3/r3_ast';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Loader } from '@googlemaps/js-api-loader';
+import { Artista } from 'src/app/interfaces/artista';
 import { Concierto } from 'src/app/interfaces/concierto';
+import { ArtistaService } from 'src/app/services/artistas/artista.service';
 import { ConciertoService } from 'src/app/services/conciertos/concierto.service';
+import { UsuariosService } from 'src/app/services/usuarios/usuarios.service';
 
 @Component({
   selector: 'app-mostrar-concierto',
@@ -12,13 +15,19 @@ import { ConciertoService } from 'src/app/services/conciertos/concierto.service'
   styleUrls: ['./mostrar-concierto.component.css']
 })
 export class MostrarConciertoComponent implements OnInit {
+
+  @ViewChild('confirm') confirm: any;
   route: string;
   id: number;
   categoria: any;
   concierto?: Concierto;
+  artistas?: Artista[] = [];
   image: string;
+  exists: boolean = false;
+  alert: boolean = false;
 
-  constructor(location: Location, private router: Router, private conciertoService: ConciertoService) {
+  constructor(location: Location, private router: Router, private conciertoService: ConciertoService,
+              private userService: UsuariosService, private artistaService: ArtistaService) {
     router.events.subscribe(val => {
       if (location.path() != "") {
         this.route = location.path().substring(location.path().indexOf(':')+1);
@@ -31,6 +40,7 @@ export class MostrarConciertoComponent implements OnInit {
   ngOnInit(): void {
     this.id = Number(this.route);
     this.getOneConcert(this.id);
+    this.getArtistsFromConcert(this.id);
     this.categoria = String(this.categoria);
     this.categoria = this.transform(this.categoria);
 
@@ -63,9 +73,41 @@ export class MostrarConciertoComponent implements OnInit {
     );
   }
 
+  public getArtistsFromConcert(id: number) {
+    this.artistaService.getArtistsConcert(id).subscribe(
+      (artists: any) => {
+        this.artistas = artists
+      },
+      error => console.error(error),
+      () => console.log(this.artistas),
+    );
+  }
+
   transform(value: string): string {
     let first = value.substring(0,1).toUpperCase();
     return first + value.substring(1);
+  }
+
+  public reservarConcierto() {
+
+    let user, u;
+
+    if (this.userService.checkUserExist()) {
+      user = JSON.parse(sessionStorage.getItem('user'));
+      this.clickMethod();
+    } else {
+      this.alert = true;
+    }
+  }
+
+  public closePopUp() {
+    this.alert = false;
+  }
+
+  public clickMethod() {
+    if(confirm("¿Estás seguro de que quieres reservar para este evento?")) {
+
+    }
   }
 
 }

@@ -1,0 +1,65 @@
+.menu-body, ul, li, a, span, i, h3, label, p, .row, .col-12, div, .group-box, form {
+  background: transparent;
+}
+
+.centering-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-perfil {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.caja-content {
+  border-radius: 7px;
+  background-color: rgb(216, 216, 216);
+  padding: 5px;
+}
+
+.edit-button {
+  text-decoration: none;
+  color: #483B99;
+  transition: all 0.3s ease-out;
+}
+
+.edit-button:hover {
+  background-color: #483B99;
+  transition: all 0.3s ease-out;
+}
+
+.group-box {
+  margin-bottom: 10%;
+}
+
+.group-box, .long-box {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.smaller-box {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.aceptar-button {
+  font-size: 14px;
+  background-color: #8B7AF4;
+  color: white;
+  transition: ease-in-out 0.2s;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.aceptar-button:hover {
+  transform:scale(1.1);
+  background-color: #483B99;
+  transition: ease-in-out 0.2s;
+}

@@ -24,16 +24,43 @@
               <h1>{{ artista?.nombre }}</h1>
               <p class="lugar">{{ artista?.lugar_nacimiento }}, {{ artista?.pais_nacimiento }}</p>
               <p class="fecha">{{ artista?.fecha_nacimiento }}</p>
-              <p class="conciertos">Este artista tiene X conciertos próximamente.</p>
+              <p class="conciertos">Este artista tiene {{ cantidad }} conciertos próximamente.</p>
             </div>
           </div>
           <div class="col-5 content-img">
             <div class="caja-foto">
-              <img src="{{image}}">
+              <img src="{{ image }}">
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="row mb-4">
+    <div class="col-12">
+      <h3 class="text-center mt-4 mb-4">Próximos conciertos para esta artista</h3>
+      <div *ngIf="conciertos.length !== 0">
+        <div *ngFor="let c of conciertos; let i = index">
+          <div class="concierto-body" [ngClass]="{'item-bodyPar': i%2==0, 'item-bodyImpar': i%2==1}">
+            <div class="row">
+              <div class="col-6">
+                <h4>{{ c.nombre }}</h4>
+                <p class="mb-2">{{ c.lugar }}</p>
+                <p class="mt-0">{{ c.fecha }}</p>
+              </div>
+              <div class="col-6">
+                <a [routerLink]="['/concierto', ':'+c.id]"><button class="btn">Ver concierto</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="cantidad === 0">
+        <h4 class="text-center mt-4 mb-4">Este artista no tiene conciertos programados actualmente.</h4>
+      </div>
+    </div>
+  </div>
+
 </div>

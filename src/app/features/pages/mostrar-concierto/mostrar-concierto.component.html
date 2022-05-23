@@ -10,6 +10,13 @@
     </div>
   </div>
 
+  <div *ngIf="alert" class="alert alert-danger" role="alert">
+    Inicia sesión para poder reservar entrada a este evento.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closePopUp()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
   <div class="row">
     <div class="col-12">
       <div class="card-background">
@@ -19,7 +26,7 @@
               <h1>{{ concierto?.nombre }}</h1>
               <p class="lugar"><i class="bi bi-building"></i> {{ concierto?.lugar }}</p>
               <p class="fecha"><i class="bi bi-calendar3"></i> {{ concierto?.fecha }}</p>
-              <button class="btn">Reserva ya</button>
+              <button class="btn" (click)="reservarConcierto()">Reserva ya</button>
             </div>
           </div>
           <div class="col-5 content-img">
@@ -36,6 +43,9 @@
     <div class="col-12 col-lg-6">
       <div class="artistas">
         <h4>Artistas presentes</h4>
+        <div *ngFor="let a of artistas">
+          <a [routerLink]="['/artista', ':'+a.id_artista]"><img src="{{ a?.imagen }}" class="round-image"></a>
+        </div>
       </div>
     </div>
   </div>

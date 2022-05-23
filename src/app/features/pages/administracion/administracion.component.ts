@@ -27,6 +27,7 @@ export class AdministracionComponent implements OnInit {
   selected: Lugar;
   selectedCat: Categoria;
   selectedCatArt: Categoria;
+  selectedArt: Artista;
   administ = '';
   imageNuevo: string;
   filterSearch = '';
@@ -36,6 +37,9 @@ export class AdministracionComponent implements OnInit {
   pageSize = 10;
   usuario: User;
   image: string;
+  alert: Boolean = false;
+  id: number;
+  concId: any;
 
   constructor(private generalService: GeneralService, private conciertoService: ConciertoService,
               private artistaService: ArtistaService, private userService: UsuariosService) { }
@@ -47,8 +51,10 @@ export class AdministracionComponent implements OnInit {
       fecha: new FormControl('', [Validators.required]),
       hora: new FormControl('', [Validators.required]),
       imagen: new FormControl('', [Validators.required]),
+      artista: new FormControl('', [Validators.required]),
       lugar: new FormControl('', [Validators.required]),
-      categoria: new FormControl('', [Validators.required])
+      categoria: new FormControl('', [Validators.required]),
+      precio: new FormControl('', [Validators.required])
     });
 
     this.newArtForm = new FormGroup({
@@ -87,12 +93,20 @@ export class AdministracionComponent implements OnInit {
     return this.newConcForm.get('imagen');
   }
 
+  get artistaField(): any {
+    return this.newConcForm.get('artista');
+  }
+
   get lugarField(): any {
     return this.newConcForm.get('lugar');
   }
 
   get categoriaField(): any {
     return this.newConcForm.get('categoria');
+  }
+
+  get precioField(): any {
+    return this.newConcForm.get('precio');
   }
 
   get nombreArtField(): any {
@@ -185,21 +199,27 @@ export class AdministracionComponent implements OnInit {
   }
 
   newConcFormSubmit() {
-
     let hora = this.newConcForm.get('hora').value.toString();
+    this.id = Number(this.conciertos[this.conciertos.length-1].id);
+    this.id++;
+    this.concId = this.id;
 
     let newConcert: Concierto = {
+      id: this.id,
       nombre: this.newConcForm.get('nombre').value,
       fecha: this.newConcForm.get('fecha').value,
       hora: hora,
       imagen: this.imageNuevo,
       entradas_vendidas: 0,
       lugar: this.newConcForm.get('lugar').value,
-      categoria: this.newConcForm.get('categoria').value
+      categoria: this.newConcForm.get('categoria').value,
+      precio: this.newConcForm.get('precio').value
     }
 
     this.conciertoService.anadirConcierto(newConcert).subscribe();
+    this.conciertoService.artistaConcierto(this.newConcForm.get('artista').value, this.concId.toString()).subscribe();
     this.newConcForm.reset();
+    this.alert = true;
   }
 
   newArtFormSubmit() {
@@ -235,5 +255,9 @@ export class AdministracionComponent implements OnInit {
 
   eliminarDelArtArray(i: number) {
     this.artistas.splice(i, 1);
+  }
+
+  public closePopUp() {
+    this.alert = false;
   }
 }

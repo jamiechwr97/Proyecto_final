@@ -4,7 +4,7 @@ export interface User {
   usuario: string,
   correo: string,
   password: string,
-  fecha_nacimiento: Date,
+  fecha_nacimiento: string,
   pais_nacimiento: string,
   imagen?: string,
   tipo_usuario: number

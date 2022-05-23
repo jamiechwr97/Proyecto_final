@@ -30,6 +30,10 @@ export class ArtistaService {
     return this.http.get(this.url+"?unicoArtista="+id);
   }
 
+  getArtistsConcert(idConc: number):Observable<any> {
+    return this.http.get(this.url+"?getArtistsConcert="+idConc);
+  }
+
   anadirArtista(a: Artista):Observable<any>  {
     return this.http.post(this.url+"?addArtista=1", a);
   }
